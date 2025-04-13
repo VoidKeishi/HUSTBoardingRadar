@@ -367,6 +367,7 @@ const accommodations = [
             phone: "0943215678"
         },
         images: [
+            "https://i.postimg.cc/5yYcwJcp/490292275-1347085339703877-3346593409232612333-n.jpg",
             "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aHJvb20lMjBzaGFyZWR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
             "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c21hbGwlMjBraXRjaGVufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
         ],
