@@ -14,11 +14,11 @@ const accommodations = [
             name: "Chị Linh",
             phone: "0912345678"
         },
+        facebook: "https://www.facebook.com/share/p/1BcbBXvuLS/",
         images: [
-            "https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c21hbGwlMjByb29tfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXBhcnRtZW50JTIwaW50ZXJpb3J8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dW5pdmVyc2l0eSUyMGJ1aWxkaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFwYXJ0bWVudCUyMGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/NGrhdRP0/491016865-1814084662843338-7048858210294516091-n.jpg",
+            "https://i.postimg.cc/6QDcq4VH/490447724-1814084686176669-3838165171678020692-n.jpg",
+            "https://i.postimg.cc/CMf1bBGG/490447285-1814084669510004-8663576387664853209-n.jpg"
         ],
         trustScore: {
             score: 92,
@@ -44,10 +44,11 @@ const accommodations = [
             name: "Văn phòng KTX",
             phone: "0987654321"
         },
+        facebook: "https://www.facebook.com/share/p/1BcCEpn7sQ/",
         images: [
-            "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hhcmVkJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZG9ybXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1595576508898-0ad5c879a061?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZG9ybXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/dtHCHj2y/490674539-1479879846730195-416531478379605353-n.jpg",
+            "https://i.postimg.cc/TP4GBhkQ/491218329-1479879863396860-2907599218046258333-n.jpg",
+            "https://i.postimg.cc/HLJFcz24/490351324-1479879916730188-8550949005232549928-n.jpg"
         ],
         trustScore: {
             score: 85,
@@ -73,11 +74,11 @@ const accommodations = [
             name: "Anh Tuấn",
             phone: "0923456789"
         },
+        facebook: "https://www.facebook.com/share/p/1E7KAhoQKj/",
         images: [
-            "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YXBhcnRtZW50JTIwaW50ZXJpb3J8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGFwYXJ0bWVudCUyMGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1633505650187-82536736c580?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGtpdGNoZW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1613013261832-a5cf35164fad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmVkcm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/6QRYxmcS/490899179-3176031669212652-3823758644167278364-n.jpg",
+            "https://i.postimg.cc/VLpqsFJc/490715169-3176031675879318-3696369309830022704-n.jpg",
+            "https://i.postimg.cc/Zn9WX1Fv/490919926-3176031699212649-7224704188281478044-n.jpg"
         ],
         trustScore: {
             score: 78,
@@ -103,10 +104,11 @@ const accommodations = [
             name: "Anh Đức",
             phone: "0912876543"
         },
+        facebook: "https://www.facebook.com/share/p/198zisrLbg/",
         images: [
-            "https://images.unsplash.com/photo-1598928636135-d146006ff4be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNtYWxsJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c21hbGwlMjByb29tfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1547590289-945092712817?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGtpdGNoZW4lMjBzaGFyZWR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/qBXBvBgB/490192866-122107168268831508-1979044362334190204-n.jpg",
+            "https://i.postimg.cc/qBXBvBgB/490192866-122107168268831508-1979044362334190204-n.jpg",
+            "https://i.postimg.cc/qBXBvBgB/490192866-122107168268831508-1979044362334190204-n.jpg"
         ],
         trustScore: {
             score: 55,
@@ -132,11 +134,11 @@ const accommodations = [
             name: "Công ty Cho thuê Cao cấp",
             phone: "0987123456"
         },
+        facebook: "https://www.facebook.com/share/p/1GEt8ep1RN/",
         images: [
-            "https://images.unsplash.com/photo-1502672023488-70e25813eb80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGx1eHVyeSUyMGFwYXJ0bWVudHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1617817583841-052a527b4f50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGx1eHVyeSUyMGFwYXJ0bWVudHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGx1eHVyeSUyMGtpdGNoZW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGFwYXJ0bWVudCUyMGJ1aWxkaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/wxVHdWb7/491081315-1347113793034365-1467637989280678436-n.jpg",
+            "https://i.postimg.cc/jd3bDDTT/490140307-1347113666367711-1157579780999412868-n.jpg",
+            "https://i.postimg.cc/pL9tzPVF/490111205-1347113613034383-982229061180454271-n.jpg"
         ],
         trustScore: {
             score: 90,
@@ -162,10 +164,11 @@ const accommodations = [
             name: "Cô Hương",
             phone: "0976543210"
         },
+        facebook: "https://www.facebook.com/share/p/16LoYjxTM7/",
         images: [
-            "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c3R1ZGVudCUyMHJvb218ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3R1ZGVudCUyMHJvb218ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aHJvb20lMjBzaGFyZWR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/fbmnq59W/488001164-122164377884341086-5057023262202006330-n.jpg",
+            "https://i.postimg.cc/vmRCn9SJ/489764761-122164377980341086-4927472703824090375-n.jpg",
+            "https://i.postimg.cc/9MbkskF2/488926015-122164377896341086-769440938603375780-n.jpg"
         ],
         trustScore: {
             score: 83,
@@ -191,10 +194,11 @@ const accommodations = [
             name: "Chị Thảo",
             phone: "0967890123"
         },
+        facebook: "https://www.facebook.com/share/p/15yZyFGHLk/",
         images: [
-            "https://images.unsplash.com/photo-1626178793926-22b28830aa30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c21hbGwlMjBhcGFydG1lbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmF0aHJvb218ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c21hbGwlMjBraXRjaGVufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/pr7sHbww/490356846-122151509762484518-4165553171693482611-n.jpg",
+            "https://i.postimg.cc/SNBg1478/490466088-122151509780484518-3932998330043230532-n.jpg",
+            "https://i.postimg.cc/8zLtqYtY/490106119-122151509642484518-8167782340735027549-n.jpg"
         ],
         trustScore: {
             score: 88,
@@ -220,10 +224,11 @@ const accommodations = [
             name: "Anh Minh",
             phone: "0932123456"
         },
+        facebook: "https://www.facebook.com/share/p/18j4p3mvjY/",
         images: [
-            "https://images.unsplash.com/photo-1609946860441-a51ffcf22208?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmVkcm9vbSUyMHNtYWxsfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c21hbGwlMjBiYXRocm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1580893246395-52aead8960dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnVzJTIwc3RvcHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/DfD6mhND/487417938-629753463222983-6490049937268215633-n.jpg",
+            "https://i.postimg.cc/fR7fH9bn/488547811-629753526556310-650756717822761582-n.jpg",
+            "https://i.postimg.cc/cJXMWGYF/488834886-629753616556301-7731600739084885466-n.jpg"
         ],
         trustScore: {
             score: 76,
@@ -249,10 +254,11 @@ const accommodations = [
             name: "Cô Lan",
             phone: "0965432109"
         },
+        facebook: "https://www.facebook.com/share/p/1A8NLc5dhp/",
         images: [
-            "https://images.unsplash.com/photo-1560448204-61dc36dc98c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNtYWxsJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1551105378-core-personal?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG91c2UlMjBvd25lcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1583845112203-29329902332e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c21hbGwlMjBraXRjaGVufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/MpwFKxMw/491429597-1019083140185883-5115786995489123466-n.jpg",
+            "https://i.postimg.cc/6ph18Snv/491157067-1019082740185923-2081099047760599881-n.jpg",
+            "https://i.postimg.cc/GphgGQxS/490968886-1019083213519209-6896301915809265979-n.jpg"
         ],
         trustScore: {
             score: 89,
@@ -278,11 +284,11 @@ const accommodations = [
             name: "Anh Hùng",
             phone: "0901234567"
         },
+        facebook: "https://www.facebook.com/share/p/19vNikHb91/",
         images: [
-            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bHV4dXJ5JTIwYXBhcnRtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bHV4dXJ5JTIwbGl2aW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGx1eHVyeSUyMGtpdGNoZW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGx1eHVyeSUyMGJhdGhyb29tfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/qMs1FYm5/490294218-1429965704837584-3278592752812418216-n.jpg",
+            "https://i.postimg.cc/Sxmgbr3N/490405888-1429965714837583-8485645845359675072-n.jpg",
+            "https://i.postimg.cc/52pn4zW5/490420155-1429965771504244-329064986463812953-n.jpg"
         ],
         trustScore: {
             score: 95,
@@ -308,10 +314,11 @@ const accommodations = [
             name: "Anh Cường",
             phone: "0978123456"
         },
+        facebook: "https://www.facebook.com/share/p/15uvFUPsa4/",
         images: [
-            "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGx1eHVyeSUyMGtpdGNoZW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hhcmVkJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aHJvb20lMjBzaGFyZWR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/qMTL2wkX/490714282-2805746546263390-325811304895233753-n.jpg",
+            "https://i.postimg.cc/VksW-VN0J/490263892-2805746682930043-8373964483536589665-n.jpg",
+            "https://i.postimg.cc/25VFCXwm/491240839-2805746836263361-1697548023482117028-n.jpg"
         ],
         trustScore: {
             score: 72,
@@ -337,10 +344,11 @@ const accommodations = [
             name: "Chị Hà",
             phone: "0934567890"
         },
+        facebook: "https://www.facebook.com/share/p/16aCeen29c/",
         images: [
-            "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c3R1ZGVudCUyMHJvb218ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGtpdGNoZW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmF0aHJvb218ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/bJnxtDWB/490316838-1781111462840538-585851006305637105-n.jpg",
+            "https://i.postimg.cc/ZnhrFYhK/491678202-1781111426173875-5534022852378196821-n.jpg",
+            "https://i.postimg.cc/v8W78nW1/491761327-1781111536173864-5364395408936406185-n.jpg"
         ],
         trustScore: {
             score: 86,
@@ -366,10 +374,11 @@ const accommodations = [
             name: "Cô Thủy",
             phone: "0943215678"
         },
+        facebook: "https://www.facebook.com/share/p/19WHjcsQCm/",
         images: [
-            "https://i.postimg.cc/5yYcwJcp/490292275-1347085339703877-3346593409232612333-n.jpg",
-            "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aHJvb20lMjBzaGFyZWR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c21hbGwlMjBraXRjaGVufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/VLgjncZm/489309978-1353120975835230-5565613863187394141-n.jpg",
+            "https://i.postimg.cc/nhwBSGtW/490540655-1353121025835225-8160783056574752811-n.jpg",
+            "https://i.postimg.cc/N03TBGF7/490327749-1353121109168550-908369782019407122-n.jpg"
         ],
         trustScore: {
             score: 65,
@@ -395,11 +404,11 @@ const accommodations = [
             name: "Ms. Ngọc - The Zei Leasing",
             phone: "0912345678"
         },
+        facebook: "https://www.facebook.com/share/p/1LQ7YAW9xQ/",
         images: [
-            "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXBhcnRtZW50JTIwaW50ZXJpb3J8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1587098337310-8f9171999972?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bHV4dXJ5JTIwa2l0Y2hlbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bHV4dXJ5JTIwYmVkcm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bHV4dXJ5JTIwYmF0aHJvb218ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/RhRn7cRX/490985222-981831020811583-7827945737468951035-n.jpg",
+            "https://i.postimg.cc/sf9SCrr7/490763023-981831070811578-2565676280887981566-n.jpg",
+            "https://i.postimg.cc/8Ppv10p3/490342919-981831104144908-8449971691990451806-n.jpg"
         ],
         trustScore: {
             score: 93,
@@ -425,10 +434,11 @@ const accommodations = [
             name: "Anh Đạt",
             phone: "0965432108"
         },
+        facebook: "https://www.facebook.com/share/p/1ANhAdYc4z/",
         images: [
-            "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aHJvb20lMjBzaGFyZWR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1585129777188-94600bc7b4b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHNtYWxsJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1525438160292-a4a1c5afd320?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJ1cyUyMHN0b3B8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/TwvyBkNt/490170401-1630900300916777-2007931815167989108-n.jpg",
+            "https://i.postimg.cc/jjDc5Zr6/490346661-1630900357583438-377383386309980650-n.jpg",
+            "https://i.postimg.cc/MTRY0HHv/490757077-1630900370916770-3267509544090241941-n.jpg"
         ],
         trustScore: {
             score: 78,
@@ -454,10 +464,11 @@ const accommodations = [
             name: "Chị Mai",
             phone: "0901234567"
         },
+        facebook: "https://www.facebook.com/share/p/168Egkm5Gi/",
         images: [
-            "https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmF0aHJvb218ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1609946860441-a51ffcf22208?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmVkcm9vbSUyMHNtYWxsfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bHV4dXJ5JTIwYmVkcm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/Kvm5LZ28/490472550-1887264785345091-131122327775474146-n.jpg",
+            "https://i.postimg.cc/rsjxgrkF/490760117-1887264342011802-5759857819820856125-n.jpg",
+            "https://i.postimg.cc/RCL7vjH5/490764540-1887264478678455-5451050027204425021-n.jpg"
         ],
         trustScore: {
             score: 84,
@@ -483,10 +494,11 @@ const accommodations = [
             name: "Cô Vân",
             phone: "0943215678"
         },
+        facebook: "https://www.facebook.com/share/p/18veTpCPjZ/",
         images: [
-            "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3R1ZGVudCUyMHJvb218ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1521783593447-5702b9bfd267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hhcmVkJTIwa2l0Y2hlbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1596873528703-3c78aa7de442?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2hhcmVkJTIwYmF0aHJvb218ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/L64z5Ntq/490681098-1709259763132671-6945676756816193424-n.jpg",
+            "https://i.postimg.cc/3JL2vm1t/490656465-1709259789799335-8704463236533186381-n.jpg",
+            "https://i.postimg.cc/CxzkH56S/489925871-1709259753132672-2440690368297691902-n.jpg"
         ],
         trustScore: {
             score: 62,
@@ -512,10 +524,11 @@ const accommodations = [
             name: "Cô Hồng",
             phone: "0987654321"
         },
+        facebook: "https://www.facebook.com/share/p/163ogMvqjk/",
         images: [
-            "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFwYXJ0bWVudCUyMGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1598928636135-d146006ff4be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNtYWxsJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1532523974781-d7dcebe9056a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c21hbGwlMjBiYXRocm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/NFj5sC3B/490099282-1398765724596340-8406190923623997557-n.jpg",
+            "https://i.postimg.cc/j5sjckdP/490222860-1398765697929676-8072249360968656571-n.jpg",
+            "https://i.postimg.cc/2j01cmW6/490043372-1398765827929663-1284165660033537188-n.jpg"
         ],
         trustScore: {
             score: 86,
@@ -541,11 +554,11 @@ const accommodations = [
             name: "Anh Sơn",
             phone: "0967890123"
         },
+        facebook: "https://www.facebook.com/share/p/1HAdGzAGPx/",
         images: [
-            "https://images.unsplash.com/photo-1551361415-69c87624334f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cm9vZnRvcCUyMGFwYXJ0bWVudHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGFwYXJ0bWVudCUyMHZpZXd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGx1eHVyeSUyMGtpdGNoZW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c21hbGwlMjBiYXRocm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/13hsMYvX/490411698-2744306159101622-7226967547938458571-n.jpg",
+            "https://i.postimg.cc/BbRsrhsh/490180509-2744306275768277-2753239199887454138-n.jpg",
+            "https://i.postimg.cc/QdQszkzb/491430702-2744306169101621-8055338190020763035-n.jpg"
         ],
         trustScore: {
             score: 82,
@@ -571,11 +584,11 @@ const accommodations = [
             name: "Anh Phong",
             phone: "0943215678"
         },
+        facebook: "https://www.facebook.com/share/p/16HuPDANJM/",
         images: [
-            "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3R1ZGVudCUyMHJvb218ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3R1ZGVudCUyMHJvb218ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c21hbGwlMjBiYXRocm9vbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-            "https://images.unsplash.com/photo-1627818356981-e9a3cf2bffe4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8dW5pdmVyc2l0eSUyMGJ1aWxkaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
+            "https://i.postimg.cc/ZnQKTbPx/491518804-2026070687883186-7951486829871842642-n.jpg",
+            "https://i.postimg.cc/nVSLK289/491193064-2026070694549852-3324560858356900085-n.jpg",
+            "https://i.postimg.cc/TYy3tbG7/490875799-2026070797883175-4385154634946477561-n.jpg"
         ],
         trustScore: {
             score: 89,
@@ -588,6 +601,26 @@ const accommodations = [
         }
     }
 ];
+
+// Function to convert postimg short URLs to full direct image URLs
+function convertToFullImageUrl(shortUrl) {
+    // Check if it's already a full URL
+    if (shortUrl.includes('i.postimg.cc')) {
+        return shortUrl;
+    }
+    
+    // For postimg.cc URLs, we'll convert them to use i.postimg.cc
+    // This is a client-side fix until all URLs can be properly updated
+    if (shortUrl.includes('postimg.cc')) {
+        // Extract the ID from the URL
+        const id = shortUrl.split('/').pop();
+        // The actual conversion would need to be handled server-side
+        // For now, we'll update the src attribute with onerror
+        return shortUrl;
+    }
+    
+    return shortUrl;
+}
 
 // DOM Elements
 document.addEventListener('DOMContentLoaded', function() {
@@ -707,7 +740,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         item.innerHTML = `
             <div class="accommodation-image">
-                <img src="${accommodation.images[0]}" alt="${accommodation.title}">
+                <img src="${accommodation.images[0]}" alt="${accommodation.title}" onerror="this.onerror=null; this.src=this.src.replace('postimg.cc', 'i.postimg.cc') + '.jpg';">
                 <div class="trust-score ${trustScoreClass}">
                     ${trustScore}
                     <div class="trust-tooltip">
@@ -783,10 +816,10 @@ document.addEventListener('DOMContentLoaded', function() {
         return `
             <div class="detailed-view">
                 <div class="image-gallery">
-                    <img src="${accommodation.images[0]}" alt="${accommodation.title}" class="main-image">
+                    <img src="${accommodation.images[0]}" alt="${accommodation.title}" class="main-image" onerror="this.onerror=null; this.src=this.src.replace('postimg.cc', 'i.postimg.cc') + '.jpg';">
                     <div class="thumbnail-container">
                         ${accommodation.images.map((src, index) => `
-                            <img src="${src}" alt="Thumbnail ${index + 1}" class="thumbnail ${index === 0 ? 'active' : ''}">
+                            <img src="${src}" alt="Thumbnail ${index + 1}" class="thumbnail ${index === 0 ? 'active' : ''}" onerror="this.onerror=null; this.src=this.src.replace('postimg.cc', 'i.postimg.cc') + '.jpg';">
                         `).join('')}
                     </div>
                 </div>
@@ -827,6 +860,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h4>Thông Tin Liên Hệ</h4>
                         <p><i class="fas fa-user"></i> ${accommodation.contact.name}</p>
                         <p><i class="fas fa-phone"></i> <a href="tel:${accommodation.contact.phone}">${accommodation.contact.phone}</a></p>
+                        <p><i class="fab fa-facebook-f"></i> <a href="${accommodation.facebook}" target="_blank">Facebook Post</a></p>
                     </div>
                 </div>
             </div>
