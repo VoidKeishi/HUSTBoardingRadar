@@ -603,7 +603,7 @@ const accommodations = [
 ];
 
 // Base API URL
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = 'https://hustboardingradar.onrender.com/api';
 
 // Function to convert postimg short URLs to full direct image URLs
 function convertToFullImageUrl(shortUrl) {
