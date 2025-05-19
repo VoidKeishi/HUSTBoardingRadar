@@ -602,13 +602,16 @@ const accommodations = [
     }
 ];
 
+// Base API URL
+const API_BASE_URL = 'http://localhost:8000/api';
+
 // Function to convert postimg short URLs to full direct image URLs
 function convertToFullImageUrl(shortUrl) {
     // Check if it's already a full URL
     if (shortUrl.includes('i.postimg.cc')) {
         return shortUrl;
     }
-    
+
     // For postimg.cc URLs, we'll convert them to use i.postimg.cc
     // This is a client-side fix until all URLs can be properly updated
     if (shortUrl.includes('postimg.cc')) {
@@ -618,23 +621,23 @@ function convertToFullImageUrl(shortUrl) {
         // For now, we'll update the src attribute with onerror
         return shortUrl;
     }
-    
+
     return shortUrl;
 }
 
 // DOM Elements
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Get DOM elements
     const accommodationsList = document.getElementById('accommodations-list');
     const accommodationModal = document.getElementById('accommodation-modal');
     const closeModal = document.querySelector('.close-modal');
     const modalContent = document.getElementById('modal-content-container');
     const resultsCount = document.getElementById('results-count');
-    
+
     // View Toggle Buttons
     const gridViewBtn = document.getElementById('grid-view');
     const listViewBtn = document.getElementById('list-view');
-    
+
     // Filter elements
     const minPriceInput = document.getElementById('min-price');
     const maxPriceInput = document.getElementById('max-price');
@@ -644,40 +647,225 @@ document.addEventListener('DOMContentLoaded', function() {
     const trustScoreValue = document.getElementById('trust-score-value');
     const applyFiltersBtn = document.getElementById('apply-filters');
     const resetFiltersBtn = document.getElementById('reset-filters');
-    const wifiCheckbox = document.getElementById('wifi');
-    const acCheckbox = document.getElementById('ac');
-    const privateBathroomCheckbox = document.getElementById('private-bathroom');
-    const kitchenCheckbox = document.getElementById('kitchen');
-    
-    // Initialize the accommodations list
-    renderAccommodations(accommodations);
-    resultsCount.textContent = `(${accommodations.length})`;
-    
+    const amenitiesContainer = document.getElementById('amenities-container');
+
+    // Store fetched rooms from API
+    let fetchedRooms = [];
+    // Store all available amenities
+    let availableAmenities = [];
+    // Selected amenities for filtering
+    let selectedAmenities = [];
+
+    // Initialize data by fetching from API
+    initializeData();
+
+    async function initializeData() {
+        try {
+            // Fetch amenities first
+            await fetchAmenities();
+
+            // Then fetch rooms
+            await fetchRecommendedRooms();
+        } catch (error) {
+            console.error('Error initializing data:', error);
+            // If API calls fail, use mock data
+            renderAccommodations(accommodations);
+            resultsCount.textContent = `(${accommodations.length})`;
+        }
+    }
+
+    // Fetch all amenities from API
+    async function fetchAmenities() {
+        try {
+            const response = await fetch(`${API_BASE_URL}/amenity`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                // Include credentials if you're using cookies or session-based auth
+                credentials: 'include'
+            });
+
+            if (!response.ok) {
+                throw new Error(`Failed to fetch amenities: ${response.status}`);
+            }
+
+            availableAmenities = await response.json();
+
+            // Render amenities in the filter section
+            renderAmenitiesFilter(availableAmenities);
+        } catch (error) {
+            console.error('Error fetching amenities:', error);
+            throw error;
+        }
+    }
+
+    // Render amenities checkboxes in the filter
+    function renderAmenitiesFilter(amenities) {
+        // Clear existing amenities
+        amenitiesContainer.innerHTML = '';
+
+        // Create checkbox for each amenity
+        amenities.forEach(amenity => {
+            const amenityItem = document.createElement('div');
+            amenityItem.className = 'filter-item';
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.id = `amenity-${amenity.code}`;
+            checkbox.value = amenity.name;
+
+            const label = document.createElement('label');
+            label.htmlFor = `amenity-${amenity.code}`;
+            label.textContent = amenity.name;
+
+            // Add change event to update selected amenities
+            checkbox.addEventListener('change', function () {
+                if (this.checked) {
+                    selectedAmenities.push(this.value);
+                } else {
+                    selectedAmenities = selectedAmenities.filter(item => item !== this.value);
+                }
+            });
+
+            amenityItem.appendChild(checkbox);
+            amenityItem.appendChild(label);
+            amenitiesContainer.appendChild(amenityItem);
+        });
+    }
+
+    // Fetch recommended rooms from API
+    async function fetchRecommendedRooms() {
+        try {
+            const response = await fetch(`${API_BASE_URL}/room`);
+
+            if (!response.ok) {
+                throw new Error(`Failed to fetch rooms: ${response.status}`);
+            }
+
+            const rooms = await response.json();
+
+            if (rooms && rooms.length > 0) {
+                // Format lastUpdated field to relative time in Vietnamese
+                const formattedRooms = rooms.map(room => {
+                    if (room.trustScore && room.trustScore.details && room.trustScore.details.lastUpdated) {
+                        room.trustScore.details.lastUpdated = formatRelativeTimeInVietnamese(new Date(room.trustScore.details.lastUpdated));
+                    }
+                    return room;
+                });
+
+                fetchedRooms = formattedRooms;
+                renderAccommodations(formattedRooms);
+                resultsCount.textContent = `(${formattedRooms.length})`;
+            } else {
+                // If API returns empty, use mock data
+                renderAccommodations(accommodations);
+                resultsCount.textContent = `(${accommodations.length})`;
+                fetchedRooms = accommodations;
+            }
+        } catch (error) {
+            console.error('Error fetching recommended rooms:', error);
+            // If API call fails, use mock data
+            renderAccommodations(accommodations);
+            resultsCount.textContent = `(${accommodations.length})`;
+            fetchedRooms = accommodations;
+        }
+    }
+
+    // Format date to relative time in Vietnamese
+    function formatRelativeTimeInVietnamese(date) {
+        const now = new Date();
+        const diffInMilliseconds = now - date;
+        const diffInSeconds = Math.floor(diffInMilliseconds / 1000);
+        const diffInMinutes = Math.floor(diffInSeconds / 60);
+        const diffInHours = Math.floor(diffInMinutes / 60);
+        const diffInDays = Math.floor(diffInHours / 24);
+
+        if (diffInMinutes < 60) {
+            return `${diffInMinutes} phút trước`;
+        } else if (diffInHours < 24) {
+            return `${diffInHours} giờ trước`;
+        } else {
+            return `${diffInDays} ngày trước`;
+        }
+    }
+
+    // Fetch a specific room by ID
+    async function fetchRoomById(roomId) {
+        try {
+            const response = await fetch(`${API_BASE_URL}/room/${roomId}`);
+
+            if (!response.ok) {
+                throw new Error(`Failed to fetch room: ${response.status}`);
+            }
+
+            const room = await response.json();
+
+            if (room) {
+                // Format lastUpdated field
+                if (room.trustScore && room.trustScore.details && room.trustScore.details.lastUpdated) {
+                    room.trustScore.details.lastUpdated = formatRelativeTimeInVietnamese(new Date(room.trustScore.details.lastUpdated));
+                }
+                return room;
+            } else {
+                return null;
+            }
+        } catch (error) {
+            console.error(`Error fetching room ${roomId}:`, error);
+            return null;
+        }
+    }
+
+    // Function to get room details by ID
+    async function getRoomDetails(roomId) {
+        // First try to get room from API
+        const room = await fetchRoomById(roomId);
+
+        if (room) {
+            return room;
+        }
+
+        // If API returns empty or fails, try to find in fetchedRooms
+        const fetchedRoom = fetchedRooms.find(r => r.id == roomId);
+        if (fetchedRoom) {
+            return fetchedRoom;
+        }
+
+        // If not found in fetchedRooms, try to find in original accommodations
+        const originalRoom = accommodations.find(r => r.id == roomId);
+        if (originalRoom) {
+            return originalRoom;
+        }
+
+        // If not found anywhere, return null
+        return null;
+    }
+
     // View Toggle Event Listeners
-    gridViewBtn.addEventListener('click', function() {
+    gridViewBtn.addEventListener('click', function () {
         if (!accommodationsList.classList.contains('grid-view')) {
             accommodationsList.classList.remove('list-view');
             accommodationsList.classList.add('grid-view');
             gridViewBtn.classList.add('active');
             listViewBtn.classList.remove('active');
-            
+
             // Save preference to localStorage
             localStorage.setItem('viewPreference', 'grid');
         }
     });
-    
-    listViewBtn.addEventListener('click', function() {
+
+    listViewBtn.addEventListener('click', function () {
         if (!accommodationsList.classList.contains('list-view')) {
             accommodationsList.classList.remove('grid-view');
             accommodationsList.classList.add('list-view');
             listViewBtn.classList.add('active');
             gridViewBtn.classList.remove('active');
-            
+
             // Save preference to localStorage
             localStorage.setItem('viewPreference', 'list');
         }
     });
-    
+
     // Check for saved view preference
     const savedViewPreference = localStorage.getItem('viewPreference');
     if (savedViewPreference === 'list') {
@@ -687,49 +875,49 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Input event listeners for range inputs
-    distanceInput.addEventListener('input', function() {
+    distanceInput.addEventListener('input', function () {
         distanceValue.textContent = `${this.value} km`;
     });
-    
-    minTrustScoreInput.addEventListener('input', function() {
+
+    minTrustScoreInput.addEventListener('input', function () {
         trustScoreValue.textContent = this.value;
     });
-    
+
     // Filter buttons event listeners
     applyFiltersBtn.addEventListener('click', applyFilters);
     resetFiltersBtn.addEventListener('click', resetFilters);
-    
+
     // Modal close event
-    closeModal.addEventListener('click', function() {
+    closeModal.addEventListener('click', function () {
         accommodationModal.style.display = 'none';
     });
-    
+
     // Close modal when clicking outside of it
-    window.addEventListener('click', function(event) {
+    window.addEventListener('click', function (event) {
         if (event.target === accommodationModal) {
             accommodationModal.style.display = 'none';
         }
     });
-    
+
     // Render all accommodations
     function renderAccommodations(accommodationsToRender) {
         accommodationsList.innerHTML = '';
-        
+
         accommodationsToRender.forEach(accommodation => {
             const accommodationItem = createAccommodationItem(accommodation);
             accommodationsList.appendChild(accommodationItem);
         });
     }
-    
+
     // Create accommodation item
     function createAccommodationItem(accommodation) {
         const item = document.createElement('div');
         item.className = 'accommodation-item';
-        
+
         // Determine trust score class
         let trustScoreClass = '';
         let trustScore = accommodation.trustScore.score;
-        
+
         if (trustScore >= 80) {
             trustScoreClass = 'high-score';
         } else if (trustScore >= 60) {
@@ -737,7 +925,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             trustScoreClass = 'low-score';
         }
-        
+
         item.innerHTML = `
             <div class="accommodation-image">
                 <img src="${accommodation.images[0]}" alt="${accommodation.title}" onerror="this.onerror=null; this.src=this.src.replace('postimg.cc', 'i.postimg.cc') + '.jpg';">
@@ -765,46 +953,54 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
         `;
-        
+
         // Add click event to open modal
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function () {
             openAccommodationModal(accommodation);
         });
-        
+
         return item;
     }
-    
+
     // Open accommodation modal
-    function openAccommodationModal(accommodation) {
-        // Populate modal content
-        modalContent.innerHTML = createDetailedView(accommodation);
-        
+    async function openAccommodationModal(accommodation) {
+        // Get the latest room details from API or local data
+        const roomDetails = await getRoomDetails(accommodation.id);
+
+        if (!roomDetails) {
+            alert('Phòng không tìm thấy!');
+            return;
+        }
+
+        // Populate modal content with the most up-to-date room data
+        modalContent.innerHTML = createDetailedView(roomDetails);
+
         // Display modal
         accommodationModal.style.display = 'block';
-        
+
         // Add event listeners for image gallery
         const thumbnails = document.querySelectorAll('.thumbnail');
         const mainImage = document.querySelector('.main-image');
-        
+
         thumbnails.forEach(thumbnail => {
-            thumbnail.addEventListener('click', function() {
+            thumbnail.addEventListener('click', function () {
                 mainImage.src = this.src;
-                
+
                 // Remove active class from all thumbnails
                 thumbnails.forEach(t => t.classList.remove('active'));
-                
+
                 // Add active class to clicked thumbnail
                 this.classList.add('active');
             });
         });
     }
-    
+
     // Create detailed view for modal
     function createDetailedView(accommodation) {
         // Determine trust score class
         let trustScoreClass = '';
         let trustScore = accommodation.trustScore.score;
-        
+
         if (trustScore >= 80) {
             trustScoreClass = 'high-score';
         } else if (trustScore >= 60) {
@@ -812,7 +1008,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             trustScoreClass = 'low-score';
         }
-        
+
         return `
             <div class="detailed-view">
                 <div class="image-gallery">
@@ -866,60 +1062,50 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
     }
-    
+
     // Apply filters
     function applyFilters() {
         const minPrice = minPriceInput.value ? parseInt(minPriceInput.value) : 0;
         const maxPrice = maxPriceInput.value ? parseInt(maxPriceInput.value) : Number.MAX_SAFE_INTEGER;
         const maxDistance = parseFloat(distanceInput.value);
         const minTrustScore = parseInt(minTrustScoreInput.value);
-        
-        const wifiChecked = wifiCheckbox.checked;
-        const acChecked = acCheckbox.checked;
-        const privateBathroomChecked = privateBathroomCheckbox.checked;
-        const kitchenChecked = kitchenCheckbox.checked;
-        
-        const filteredAccommodations = accommodations.filter(acc => {
+
+        // Use fetchedRooms as the source for filtering
+        const roomsToFilter = fetchedRooms.length > 0 ? fetchedRooms : accommodations;
+
+        const filteredAccommodations = roomsToFilter.filter(acc => {
             // Price filters
             if (acc.price < minPrice || acc.price > maxPrice) {
                 return false;
             }
-            
+
             // Distance filter
             if (acc.distance > maxDistance) {
                 return false;
             }
-            
+
             // Trust score filter
             if (acc.trustScore.score < minTrustScore) {
                 return false;
             }
-            
-            // Amenities filters
-            if (wifiChecked && !acc.amenities.includes('Wi-Fi')) {
-                return false;
+
+            // Amenities filters - using the selected amenities from checkboxes
+            if (selectedAmenities.length > 0) {
+                // Check if the room has all the selected amenities
+                for (const amenity of selectedAmenities) {
+                    if (!acc.amenities.includes(amenity)) {
+                        return false;
+                    }
+                }
             }
-            
-            if (acChecked && !acc.amenities.includes('Điều Hòa')) {
-                return false;
-            }
-            
-            if (privateBathroomChecked && !acc.amenities.includes('Phòng Tắm Riêng')) {
-                return false;
-            }
-            
-            if (kitchenChecked && !acc.amenities.includes('Bếp') && !acc.amenities.includes('Bếp Chung') && !acc.amenities.includes('Bếp Riêng') && !acc.amenities.includes('Bếp Đầy Đủ')) {
-                return false;
-            }
-            
+
             return true;
         });
-        
-        // Update results
+
         renderAccommodations(filteredAccommodations);
         resultsCount.textContent = `(${filteredAccommodations.length})`;
     }
-    
+
     // Reset filters
     function resetFilters() {
         minPriceInput.value = '';
@@ -928,13 +1114,17 @@ document.addEventListener('DOMContentLoaded', function() {
         distanceValue.textContent = '3 km';
         minTrustScoreInput.value = 50;
         trustScoreValue.textContent = '50';
-        
-        wifiCheckbox.checked = false;
-        acCheckbox.checked = false;
-        privateBathroomCheckbox.checked = false;
-        kitchenCheckbox.checked = false;
-        
-        renderAccommodations(accommodations);
-        resultsCount.textContent = `(${accommodations.length})`;
+
+        // Clear amenity checkboxes
+        const amenityCheckboxes = document.querySelectorAll('#amenities-container input[type="checkbox"]');
+        amenityCheckboxes.forEach(checkbox => {
+            checkbox.checked = false;
+        });
+        selectedAmenities = [];
+
+        // Reset to all rooms from API or mock data
+        const roomsToRender = fetchedRooms.length > 0 ? fetchedRooms : accommodations;
+        renderAccommodations(roomsToRender);
+        resultsCount.textContent = `(${roomsToRender.length})`;
     }
 });
