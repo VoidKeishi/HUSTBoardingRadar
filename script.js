@@ -9,7 +9,7 @@ const accommodations = [
         distance: 0.5,
         capacity: 1,
         description: "Căn hộ studio sáng sủa và hiện đại, hoàn hảo cho sinh viên. Chỉ cách cổng chính ĐHBKHN 5 phút đi bộ. Mới được cải tạo với nội thất và thiết bị mới.",
-        amenities: ["Wi-Fi", "Điều Hòa", "Phòng Tắm Riêng", "Bếp", "Máy Giặt", "Bàn Học"],
+        amenities: ["Wifi", "Điều hòa", "Phòng tắm riêng", "Bếp", "Máy giặt", "Bàn học"],
         contact: {
             name: "Chị Linh",
             phone: "0912345678"
@@ -39,7 +39,7 @@ const accommodations = [
         distance: 0.3,
         capacity: 4,
         description: "Phòng ở ghép giá rẻ trong tòa nhà dành riêng cho sinh viên. Đã bao gồm tất cả các tiện ích. Khu vực chung bao gồm bếp, phòng khách và không gian học tập. Rất gần khuôn viên ĐHBKHN.",
-        amenities: ["Wi-Fi", "Phòng Tắm Chung", "Bếp", "Khu vực học tập", "Bảo vệ"],
+        amenities: ["Wifi", "Phòng tắm chung", "Bếp", "Khu vực học tập", "Bảo vệ"],
         contact: {
             name: "Văn phòng KTX",
             phone: "0987654321"
@@ -68,8 +68,8 @@ const accommodations = [
         size: 65,
         distance: 0.7,
         capacity: 4,
-        description: "Hoàn hảo để ở ghép với bạn, căn hộ 2 phòng ngủ rộng rãi này mang đến sự thoải mái và tiện lợi. Cả hai phòng ngủ đều rộng rãi với tủ quần áo âm tường. Phòng khách kiểu mở với nhà bếp hiện đại.",
-        amenities: ["Wi-Fi", "Điều Hòa", "Phòng Tắm Riêng", "Bếp", "Ban Công", "Máy Giặt"],
+        description: "Hoàn hảo để ở ghép với bạn, căn hộ 2 phòng ngủ rộng rãi này mang đến sự thoải mái và tiện lợi. Cả hai phòng ngủ đều rộng rãi với Tủ quần áo âm tường. Phòng khách kiểu mở với nhà bếp hiện đại.",
+        amenities: ["Wifi", "Điều hòa", "Phòng tắm riêng", "Bếp", "Ban công", "Máy giặt"],
         contact: {
             name: "Anh Tuấn",
             phone: "0923456789"
@@ -99,7 +99,7 @@ const accommodations = [
         distance: 0.4,
         capacity: 1,
         description: "Phòng đơn giá rẻ trong nhà ở ghép. Phù hợp cho sinh viên có ngân sách hạn chế. Phòng tắm và bếp dùng chung với 3 người khác. Tất cả hóa đơn đã bao gồm trong tiền thuê.",
-        amenities: ["Wi-Fi", "Phòng Tắm Chung", "Bếp Chung", "Bàn Học"],
+        amenities: ["Wifi", "Phòng tắm chung", "Bếp Chung", "Bàn học"],
         contact: {
             name: "Anh Đức",
             phone: "0912876543"
@@ -128,8 +128,8 @@ const accommodations = [
         size: 35,
         distance: 1.2,
         capacity: 2,
-        description: "Căn hộ studio cao cấp trong tòa nhà hiện đại với bảo vệ và thang máy. Căn hộ có nội thất cao cấp, bếp đầy đủ thiết bị, và ban công nhỏ với tầm nhìn ra thành phố. Hoàn hảo cho sinh viên muốn sự thoải mái và riêng tư.",
-        amenities: ["Wi-Fi", "Điều Hòa", "Phòng Tắm Riêng", "Bếp Đầy Đủ", "Ban Công", "Bảo Vệ", "Thang Máy"],
+        description: "Căn hộ studio cao cấp trong tòa nhà hiện đại với Bảo vệ và thang máy. Căn hộ có nội thất cao cấp, Bếp đầy đủ thiết bị, và Ban công nhỏ với tầm nhìn ra thành phố. Hoàn hảo cho sinh viên muốn sự thoải mái và riêng tư.",
+        amenities: ["Wifi", "Điều hòa", "Phòng tắm riêng", "Bếp đầy đủ", "Ban công", "Bảo vệ", "Thang Máy"],
         contact: {
             name: "Công ty Cho thuê Cao cấp",
             phone: "0987123456"
@@ -159,7 +159,7 @@ const accommodations = [
         distance: 0.2,
         capacity: 1,
         description: "Phòng trọ sinh viên sạch sẽ, an ninh, gần cổng phụ ĐHBKHN. Phòng có cửa sổ thoáng mát, không gian riêng tư. Chủ nhà thân thiện, không thu phí gửi xe.",
-        amenities: ["Wi-Fi", "Quạt Trần", "Giường", "Tủ Quần Áo", "Bàn Học", "Gửi Xe Miễn Phí"],
+        amenities: ["Wifi", "Quạt Trần", "Giường", "Tủ quần áo", "Bàn học", "Gửi Xe Miễn Phí"],
         contact: {
             name: "Cô Hương",
             phone: "0976543210"
@@ -189,7 +189,7 @@ const accommodations = [
         distance: 1.5,
         capacity: 2,
         description: "Căn hộ mini đầy đủ tiện nghi, có phòng tắm và bếp riêng. Tòa nhà mới xây, an ninh 24/7, gần công viên Thống Nhất và chỉ cách ĐHBKHN 15 phút đi xe máy.",
-        amenities: ["Wi-Fi", "Điều Hòa", "Nóng Lạnh", "Phòng Tắm Riêng", "Bếp Riêng", "Tủ Lạnh", "Máy Giặt", "Thang Máy"],
+        amenities: ["Wifi", "Điều hòa", "Nóng Lạnh", "Phòng tắm riêng", "Bếp Riêng", "Tủ Lạnh", "Máy giặt", "Thang Máy"],
         contact: {
             name: "Chị Thảo",
             phone: "0967890123"
@@ -219,7 +219,7 @@ const accommodations = [
         distance: 3.5,
         capacity: 1,
         description: "Phòng trọ mới xây dựng và trang bị đầy đủ tiện nghi. Khu vực yên tĩnh, an ninh tốt, gần chợ và cửa hàng tiện lợi. Có xe buýt trực tiếp đến ĐHBKHN.",
-        amenities: ["Wi-Fi", "Điều Hòa", "Nóng Lạnh", "Tủ Quần Áo", "Bàn Học", "Phòng Tắm Riêng"],
+        amenities: ["Wifi", "Điều hòa", "Nóng Lạnh", "Tủ quần áo", "Bàn học", "Phòng tắm riêng"],
         contact: {
             name: "Anh Minh",
             phone: "0932123456"
@@ -249,7 +249,7 @@ const accommodations = [
         distance: 1.8,
         capacity: 1,
         description: "Phòng trọ dành riêng cho nữ sinh viên, khu vực an ninh, yên tĩnh. Chủ nhà là giáo viên về hưu, thân thiện và quan tâm đến sinh viên như con cái trong nhà.",
-        amenities: ["Wi-Fi", "Quạt", "Nóng Lạnh", "Bàn Học", "Phòng Tắm Chung", "Bếp Chung"],
+        amenities: ["Wifi", "Quạt", "Nóng Lạnh", "Bàn học", "Phòng tắm chung", "Bếp Chung"],
         contact: {
             name: "Cô Lan",
             phone: "0965432109"
@@ -279,7 +279,7 @@ const accommodations = [
         distance: 2.0,
         capacity: 5,
         description: "Căn hộ 2 phòng ngủ trong khu đô thị Times City. Đầy đủ nội thất cao cấp, an ninh 24/7, gần trường học, bệnh viện, siêu thị. Lý tưởng cho gia đình hoặc nhóm sinh viên muốn ở chung.",
-        amenities: ["Wi-Fi", "Điều Hòa", "Phòng Tắm Riêng", "Bếp Đầy Đủ", "Máy Giặt", "Bảo Vệ", "Hồ Bơi", "Phòng Gym"],
+        amenities: ["Wifi", "Điều hòa", "Phòng tắm riêng", "Bếp đầy đủ", "Máy giặt", "Bảo vệ", "Hồ bơi", "Phòng gym"],
         contact: {
             name: "Anh Hùng",
             phone: "0901234567"
@@ -309,7 +309,7 @@ const accommodations = [
         distance: 0.3,
         capacity: 1,
         description: "Phòng trọ sinh viên cơ bản, sạch sẽ, ngay sát ĐHBKHN. Không gian nhỏ nhưng đủ dùng cho 1 sinh viên. Khu vực an ninh tốt, nhiều quán ăn xung quanh.",
-        amenities: ["Wi-Fi", "Quạt", "Bàn Học", "Tủ Quần Áo", "Phòng Tắm Chung", "Gửi Xe"],
+        amenities: ["Wifi", "Quạt", "Bàn học", "Tủ quần áo", "Phòng tắm chung", "Gửi Xe"],
         contact: {
             name: "Anh Cường",
             phone: "0978123456"
@@ -339,7 +339,7 @@ const accommodations = [
         distance: 0.4,
         capacity: 2,
         description: "Căn hộ tầng trệt rộng rãi gần cổng chính ĐHBKHN. Phù hợp cho cặp đôi hoặc 2 sinh viên ở ghép. Gần chợ, cửa hàng tiện lợi, và nhiều dịch vụ sinh viên.",
-        amenities: ["Wi-Fi", "Điều Hòa", "Phòng Tắm Riêng", "Bếp", "Máy Giặt", "Lối Đi Riêng"],
+        amenities: ["Wifi", "Điều hòa", "Phòng tắm riêng", "Bếp", "Máy giặt", "Lối Đi Riêng"],
         contact: {
             name: "Chị Hà",
             phone: "0934567890"
@@ -369,7 +369,7 @@ const accommodations = [
         distance: 0.5,
         capacity: 1,
         description: "Phòng trọ sinh viên gần ĐHBKHN, khu vực tập trung nhiều sinh viên. Phòng mới sơn sửa, sạch sẽ. Chỉ cách cổng trường 5 phút đi bộ.",
-        amenities: ["Wi-Fi", "Quạt", "Nóng Lạnh", "Tủ Quần Áo", "Phòng Tắm Chung", "Bàn Học"],
+        amenities: ["Wifi", "Quạt", "Nóng Lạnh", "Tủ quần áo", "Phòng tắm chung", "Bàn học"],
         contact: {
             name: "Cô Thủy",
             phone: "0943215678"
@@ -399,7 +399,7 @@ const accommodations = [
         distance: 5.0,
         capacity: 3,
         description: "Căn hộ cao cấp 1 phòng ngủ tại chung cư The Zei Mỹ Đình. Nội thất đầy đủ, thiết kế hiện đại. Tuy xa trường nhưng có xe bus và dịch vụ shuttle bus đến các trường đại học lớn ở Hà Nội.",
-        amenities: ["Wi-Fi", "Điều Hòa", "Smart TV", "Bếp Đầy Đủ", "Phòng Tắm Riêng", "Ban Công", "Máy Giặt", "Bảo Vệ 24/7"],
+        amenities: ["Wifi", "Điều hòa", "Smart TV", "Bếp đầy đủ", "Phòng tắm riêng", "Ban công", "Máy giặt", "Bảo vệ 24/7"],
         contact: {
             name: "Ms. Ngọc - The Zei Leasing",
             phone: "0912345678"
@@ -429,7 +429,7 @@ const accommodations = [
         distance: 2.3,
         capacity: 1,
         description: "Phòng trọ sinh viên sạch đẹp, gần ĐH Kinh Tế Quốc Dân. Phòng có cửa sổ, thiết bị cơ bản, internet tốc độ cao. Nhiều sinh viên ĐHBKHN cũng lựa chọn khu vực này vì có xe buýt đi lại thuận tiện.",
-        amenities: ["Wi-Fi", "Điều Hòa", "Nóng Lạnh", "Tủ Quần Áo", "Bàn Học", "Phòng Tắm Riêng"],
+        amenities: ["Wifi", "Điều hòa", "Nóng Lạnh", "Tủ quần áo", "Bàn học", "Phòng tắm riêng"],
         contact: {
             name: "Anh Đạt",
             phone: "0965432108"
@@ -459,7 +459,7 @@ const accommodations = [
         distance: 1.7,
         capacity: 1,
         description: "Phòng trọ cao cấp dành cho sinh viên, mới hoàn thiện nội thất. Phòng riêng biệt, an ninh, yên tĩnh. Chỉ cho nữ sinh hoặc gia đình thuê.",
-        amenities: ["Wi-Fi", "Điều Hòa", "Nóng Lạnh", "Tủ Quần Áo", "Bàn Học", "Phòng Tắm Riêng", "Tủ Lạnh Mini"],
+        amenities: ["Wifi", "Điều hòa", "Nóng Lạnh", "Tủ quần áo", "Bàn học", "Phòng tắm riêng", "Tủ Lạnh Mini"],
         contact: {
             name: "Chị Mai",
             phone: "0901234567"
@@ -489,7 +489,7 @@ const accommodations = [
         distance: 1.9,
         capacity: 1,
         description: "Phòng trọ giá rẻ gần chợ Mơ, phù hợp cho sinh viên tiết kiệm chi phí. Phòng nhỏ nhưng đầy đủ tiện nghi cơ bản. Khu vực an ninh, nhiều sinh viên ở.",
-        amenities: ["Wi-Fi", "Quạt", "Tủ", "Giường", "Phòng Tắm Chung", "Bếp Chung"],
+        amenities: ["Wifi", "Quạt", "Tủ", "Giường", "Phòng tắm chung", "Bếp Chung"],
         contact: {
             name: "Cô Vân",
             phone: "0943215678"
@@ -519,7 +519,7 @@ const accommodations = [
         distance: 1.0,
         capacity: 1,
         description: "Phòng trọ dành riêng cho nữ sinh viên, khu vực an ninh, chủ nhà sống cùng. Môi trường sống lành mạnh, đầy đủ tiện nghi, phù hợp với các bạn nữ thích sự riêng tư và an toàn.",
-        amenities: ["Wi-Fi", "Điều Hòa", "Nóng Lạnh", "Tủ Quần Áo", "Bàn Học", "Phòng Tắm Riêng", "Bếp Chung"],
+        amenities: ["Wifi", "Điều hòa", "Nóng Lạnh", "Tủ quần áo", "Bàn học", "Phòng tắm riêng", "Bếp Chung"],
         contact: {
             name: "Cô Hồng",
             phone: "0987654321"
@@ -549,7 +549,7 @@ const accommodations = [
         distance: 3.2,
         capacity: 3,
         description: "Căn hộ tầng thượng với view toàn cảnh Hà Nội, không gian thoáng mát. Nội thất đầy đủ, thiết kế hiện đại. Tuy cách xa trường học nhưng có môi trường yên tĩnh, phù hợp cho người thích không gian riêng tư.",
-        amenities: ["Wi-Fi", "Điều Hòa", "Phòng Tắm Riêng", "Bếp Đầy Đủ", "Máy Giặt", "Ban Công", "Sân Thượng", "Thang Máy"],
+        amenities: ["Wifi", "Điều hòa", "Phòng tắm riêng", "Bếp đầy đủ", "Máy giặt", "Ban công", "Sân Thượng", "Thang Máy"],
         contact: {
             name: "Anh Sơn",
             phone: "0967890123"
@@ -579,7 +579,7 @@ const accommodations = [
         distance: 0.1,
         capacity: 1,
         description: "Phòng trọ cách cổng trường ĐHBKHN chỉ 100m, vị trí đắc địa, thuận tiện di chuyển. Phòng vừa được sửa chữa mới, sạch sẽ, đầy đủ tiện nghi cơ bản cho sinh viên.",
-        amenities: ["Wi-Fi", "Điều Hòa", "Nóng Lạnh", "Tủ Quần Áo", "Bàn Học", "Phòng Tắm Riêng", "Gửi Xe"],
+        amenities: ["Wifi", "Điều hòa", "Nóng Lạnh", "Tủ quần áo", "Bàn học", "Phòng tắm riêng", "Gửi Xe"],
         contact: {
             name: "Anh Phong",
             phone: "0943215678"
@@ -737,7 +737,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Fetch recommended rooms from API
     async function fetchRecommendedRooms() {
         try {
-            const response = await fetch(`${API_BASE_URL}/room`);
+            const response = await fetch(`${API_BASE_URL}/rooms`);
 
             if (!response.ok) {
                 throw new Error(`Failed to fetch rooms: ${response.status}`);

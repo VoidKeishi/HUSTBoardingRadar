@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trọ BK - Tìm Nhà Sinh Viên</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMzQ5OGRiIiBkPSJNMjU2IDYuNUw0NSAyNTdsNDUuNzI5LTdjLTIuODgzIDMzLjYzNS41OCAxMS44NzQgMCAxMjVoNjQgMTQ5IDE1OSA0LjMgMTBjLTAuNjQ1LTExMy4xMjYgMi44ODMtOTEuMzY1IDAtMTI1TDQ2NyAyNTcgMjU2IDYuNXpNMTk2IDI3My41djEwNWgyMDB2LTEwNUgxOTZ6Ii8+PHBhdGggZmlsbD0iIzI5ODBiOSIgZD0iTTI1NiA2LjUgNDUgMjU3bDQ1LjcyOS03Yy0yLjg4MyAzMy42MzUuNTggMTEuODc0IDAgMTI1aDU1LjI3MWwtNC0xMDVjMC0xOS4zMyAxOC42Ny0zNSA0Mi00NWgxNDNjMjMuMzMgMTAgNDIgMjUuNjcgNDIgNDVsLTQgMTA1aDQ0LjMgNy43Yy0wLjY0NS0xMTMuMTI2IDIuODgzLTkxLjM2NSAwLTEyNUw0NjcgMjU3IDI1NiA2LjV6TTIxNiAyNzMuNXY4NWgxNjB2LTg1SDIxNnoiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMzg2IDI4OC41aDIwdjkwaDIwdi05MGgyMHYtMjBoLTYwdjIwek0xODYgMjg4LjVoMjB2OTBoMjB2LTkwaDIwdi0yMGgtNjB2MjB6Ii8+PC9zdmc+">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMzQ5OGRiIiBkPSJNMjU2IDYuNUw0NSAyNTdsNDUuNzI5LTdjLTIuODgzIDMzLjYzNS41OCAxMS44NzQgMCAxMjVoNjQgMTQ5IDE1OSA0LjMgMTBjLTAuNjQ1LTExMy4xMjYgMi44ODMtOTEuMzY1IDAtMTI1TDQ2NyAyNTcgMjU2IDYuNXpNMTk2IDI3My41djEwNWgyMDB2LTEwNUgxOTZ6Ii8+PHBhdGggZmlsbD0iIzI5ODBiOSIgZD0iTTI1NiA2LjUgNDUgMjU3bDQ1LjcyOS03Yy0yLjg4MyAzMy42MzUuNTggMTEuODc0IDAgMTI1aDU1LjI3MWwtNC0xMDVjMC0xOS4zMyAxOC42Ny0zNSA0Mi00NWgxNDNjMjMuMzMgMTAgNDIgMjUuNjcgNDIgNDVsLTQgMTA1aDQ0LjMgNy43Yy0wLjY0NS0xMTMuMTI2IDIuODgzLTkxLjM2NSAwLTEyNUw0NjcgMjU3IDI1NiA2LjV6TTIxNiAyNzMuNXY4NWgxNjB2LTg1SDIxNnoiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMzg2IDI4OC41aDIwdjkwaDIwdi05MGgyMHYtMjBoLTYwdjIwek0xODYgMjg4LjVoMjB2OTBoMjB2LTkwaDIwdi0yMGgtNjB2MjB6Ii8+PC9zdmc+">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -39,7 +42,7 @@
 
                 <div class="filter-group">
                     <label>Tiện Ích</label>
-                    <div class="amenities-checkboxes">
+                    <div id="amenities-container" class="amenities-checkboxes">
                         <div class="checkbox-item">
                             <input type="checkbox" id="wifi">
                             <label for="wifi">Wi-Fi</label>
@@ -83,7 +86,7 @@
                         </button>
                     </div>
                 </div>
-                
+
                 <div class="accommodations-list grid-view" id="accommodations-list">
                     <!-- Accommodation items will be loaded here via JavaScript -->
                 </div>
@@ -109,4 +112,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

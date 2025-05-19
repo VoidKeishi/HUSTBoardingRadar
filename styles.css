@@ -129,6 +129,32 @@ input[type="range"] {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
+    max-height: 150px;
+    overflow-y: auto;
+    padding-right: 5px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+/* Custom scrollbar for amenities container */
+.amenities-checkboxes::-webkit-scrollbar {
+    width: 6px;
+}
+
+.amenities-checkboxes::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.amenities-checkboxes::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.amenities-checkboxes::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
 }
 
 .checkbox-item {
@@ -585,7 +611,8 @@ h2 {
     transition: opacity 0.2s;
 }
 
-.thumbnail.active, .thumbnail:hover {
+.thumbnail.active,
+.thumbnail:hover {
     opacity: 1;
     box-shadow: 0 0 0 2px var(--primary-color);
 }
@@ -675,9 +702,10 @@ footer {
 /* Responsive Adjustments */
 @media (max-width: 1200px) {
     .accommodations-list.grid-view {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on medium screens */
     }
-    
+
     .accommodations-list.list-view .accommodation-item {
         grid-template-columns: 180px 1fr;
     }
@@ -687,12 +715,12 @@ footer {
     .main-container {
         grid-template-columns: 1fr;
     }
-    
+
     .filter-sidebar {
         position: static;
         margin-bottom: 20px;
     }
-    
+
     .accommodations-list.list-view .accommodation-item {
         grid-template-columns: 150px 1fr;
     }
@@ -700,21 +728,22 @@ footer {
 
 @media (max-width: 768px) {
     .accommodations-list.grid-view {
-        grid-template-columns: 1fr; /* 1 column on mobile */
+        grid-template-columns: 1fr;
+        /* 1 column on mobile */
     }
-    
+
     .accommodations-list.list-view .accommodation-item {
         grid-template-columns: 120px 1fr;
     }
-    
+
     .filter-container {
         gap: 0.8rem;
     }
-    
+
     .detailed-view {
         grid-template-columns: 1fr;
     }
-    
+
     .amenities-checkboxes {
         grid-template-columns: 1fr;
     }
