@@ -1,6 +1,36 @@
 // Mock data for accommodations
 const accommodations = [
     {
+        id: 10,
+        title: "Căn Hộ Chung Cư Times City",
+        address: "458 Minh Khai, Hai Bà Trưng, Hà Nội",
+        price: 8500000,
+        size: 70,
+        distance: 2.0,
+        capacity: 5,
+        description: "Căn hộ 2 phòng ngủ trong khu đô thị Times City. Đầy đủ nội thất cao cấp, an ninh 24/7, gần trường học, bệnh viện, siêu thị. Lý tưởng cho gia đình hoặc nhóm sinh viên muốn ở chung.",
+        amenities: ["Wifi", "Điều hòa", "Phòng tắm riêng", "Bếp đầy đủ", "Máy giặt", "Bảo vệ", "Hồ bơi", "Phòng gym"],
+        contact: {
+            name: "Anh Hùng",
+            phone: "0901234567"
+        },
+        facebook: "https://www.facebook.com/share/p/19vNikHb91/",
+        images: [
+            "https://i.postimg.cc/qMs1FYm5/490294218-1429965704837584-3278592752812418216-n.jpg",
+            "https://i.postimg.cc/Sxmgbr3N/490405888-1429965714837583-8485645845359675072-n.jpg",
+            "https://i.postimg.cc/52pn4zW5/490420155-1429965771504244-329064986463812953-n.jpg"
+        ],
+        trustScore: {
+            score: 95,
+            details: {
+                source: "Đơn vị bất động sản xác thực",
+                lastUpdated: "1 ngày trước",
+                imageQuality: "Hình ảnh chuyên nghiệp chất lượng cao",
+                contactVerified: true
+            }
+        }
+    },
+    {
         id: 1,
         title: "Phòng Studio Hiện Đại ở Phường Bách Khoa",
         address: "15 Trần Đại Nghĩa, Bách Khoa, Hai Bà Trưng, Hà Nội",
@@ -31,92 +61,32 @@ const accommodations = [
         }
     },
     {
-        id: 2,
-        title: "Phòng Ở Ghép Trong Ký Túc Xá Sinh Viên",
-        address: "78 Trần Đại Nghĩa, Bách Khoa, Hai Bà Trưng, Hà Nội",
-        price: 1800000,
-        size: 20,
-        distance: 0.3,
-        capacity: 4,
-        description: "Phòng ở ghép giá rẻ trong tòa nhà dành riêng cho sinh viên. Đã bao gồm tất cả các tiện ích. Khu vực chung bao gồm bếp, phòng khách và không gian học tập. Rất gần khuôn viên ĐHBKHN.",
-        amenities: ["Wifi", "Phòng tắm chung", "Bếp", "Khu vực học tập", "Bảo vệ"],
+        id: 14,
+        title: "Căn Hộ 1 Phòng Ngủ The Zei Mỹ Đình",
+        address: "The Zei, Mỹ Đình, Nam Từ Liêm, Hà Nội",
+        price: 9000000,
+        size: 45,
+        distance: 5.0,
+        capacity: 3,
+        description: "Căn hộ cao cấp 1 phòng ngủ tại chung cư The Zei Mỹ Đình. Nội thất đầy đủ, thiết kế hiện đại. Tuy xa trường nhưng có xe bus và dịch vụ shuttle bus đến các trường đại học lớn ở Hà Nội.",
+        amenities: ["Wifi", "Điều hòa", "Smart TV", "Bếp đầy đủ", "Phòng tắm riêng", "Ban công", "Máy giặt", "Bảo vệ 24/7"],
         contact: {
-            name: "Văn phòng KTX",
-            phone: "0987654321"
+            name: "Ms. Ngọc - The Zei Leasing",
+            phone: "0912345678"
         },
-        facebook: "https://www.facebook.com/share/p/1BcCEpn7sQ/",
+        facebook: "https://www.facebook.com/share/p/1LQ7YAW9xQ/",
         images: [
-            "https://i.postimg.cc/dtHCHj2y/490674539-1479879846730195-416531478379605353-n.jpg",
-            "https://i.postimg.cc/TP4GBhkQ/491218329-1479879863396860-2907599218046258333-n.jpg",
-            "https://i.postimg.cc/HLJFcz24/490351324-1479879916730188-8550949005232549928-n.jpg"
+            "https://i.postimg.cc/RhRn7cRX/490985222-981831020811583-7827945737468951035-n.jpg",
+            "https://i.postimg.cc/sf9SCrr7/490763023-981831070811578-2565676280887981566-n.jpg",
+            "https://i.postimg.cc/8Ppv10p3/490342919-981831104144908-8449971691990451806-n.jpg"
         ],
         trustScore: {
-            score: 85,
+            score: 93,
             details: {
-                source: "Đối tác nhà ở của trường",
-                lastUpdated: "7 ngày trước",
-                imageQuality: "Hình ảnh chất lượng tốt",
+                source: "Đơn vị bất động sản xác thực",
+                lastUpdated: "2 ngày trước",
+                imageQuality: "Hình ảnh chuyên nghiệp chất lượng cao",
                 contactVerified: true
-            }
-        }
-    },
-    {
-        id: 3,
-        title: "Căn Hộ 2 Phòng Ngủ Rộng Rãi",
-        address: "25 Đại Cồ Việt, Bách Khoa, Hai Bà Trưng, Hà Nội",
-        price: 6500000,
-        size: 65,
-        distance: 0.7,
-        capacity: 4,
-        description: "Hoàn hảo để ở ghép với bạn, căn hộ 2 phòng ngủ rộng rãi này mang đến sự thoải mái và tiện lợi. Cả hai phòng ngủ đều rộng rãi với Tủ quần áo âm tường. Phòng khách kiểu mở với nhà bếp hiện đại.",
-        amenities: ["Wifi", "Điều hòa", "Phòng tắm riêng", "Bếp", "Ban công", "Máy giặt"],
-        contact: {
-            name: "Anh Tuấn",
-            phone: "0923456789"
-        },
-        facebook: "https://www.facebook.com/share/p/1E7KAhoQKj/",
-        images: [
-            "https://i.postimg.cc/6QRYxmcS/490899179-3176031669212652-3823758644167278364-n.jpg",
-            "https://i.postimg.cc/VLpqsFJc/490715169-3176031675879318-3696369309830022704-n.jpg",
-            "https://i.postimg.cc/Zn9WX1Fv/490919926-3176031699212649-7224704188281478044-n.jpg"
-        ],
-        trustScore: {
-            score: 78,
-            details: {
-                source: "Người dùng đăng tải",
-                lastUpdated: "14 ngày trước",
-                imageQuality: "Hình ảnh chất lượng tốt",
-                contactVerified: true
-            }
-        }
-    },
-    {
-        id: 4,
-        title: "Phòng Giá Rẻ Gần ĐHBKHN",
-        address: "120 Tạ Quang Bửu, Bách Khoa, Hai Bà Trưng, Hà Nội",
-        price: 1500000,
-        size: 15,
-        distance: 0.4,
-        capacity: 1,
-        description: "Phòng đơn giá rẻ trong nhà ở ghép. Phù hợp cho sinh viên có ngân sách hạn chế. Phòng tắm và bếp dùng chung với 3 người khác. Tất cả hóa đơn đã bao gồm trong tiền thuê.",
-        amenities: ["Wifi", "Phòng tắm chung", "Bếp Chung", "Bàn học"],
-        contact: {
-            name: "Anh Đức",
-            phone: "0912876543"
-        },
-        facebook: "https://www.facebook.com/share/p/198zisrLbg/",
-        images: [
-            "https://i.postimg.cc/qBXBvBgB/490192866-122107168268831508-1979044362334190204-n.jpg",
-            "https://i.postimg.cc/qBXBvBgB/490192866-122107168268831508-1979044362334190204-n.jpg",
-            "https://i.postimg.cc/qBXBvBgB/490192866-122107168268831508-1979044362334190204-n.jpg"
-        ],
-        trustScore: {
-            score: 55,
-            details: {
-                source: "Dữ liệu từ trang web cho thuê",
-                lastUpdated: "45 ngày trước",
-                imageQuality: "Hình ảnh chất lượng thấp",
-                contactVerified: false
             }
         }
     },
@@ -151,30 +121,60 @@ const accommodations = [
         }
     },
     {
-        id: 6,
-        title: "Phòng Trọ Sinh Viên Gần Cổng Phụ ĐHBKHN",
-        address: "45 Lê Thanh Nghị, Bách Khoa, Hai Bà Trưng, Hà Nội",
+        id: 20,
+        title: "Phòng Trọ Sinh Viên Cạnh Cổng ĐHBKHN",
+        address: "15 Giáp Nhất, Thanh Xuân, Hà Nội",
         price: 1900000,
         size: 18,
-        distance: 0.2,
+        distance: 0.1,
         capacity: 1,
-        description: "Phòng trọ sinh viên sạch sẽ, an ninh, gần cổng phụ ĐHBKHN. Phòng có cửa sổ thoáng mát, không gian riêng tư. Chủ nhà thân thiện, không thu phí gửi xe.",
-        amenities: ["Wifi", "Quạt Trần", "Giường", "Tủ quần áo", "Bàn học", "Gửi Xe Miễn Phí"],
+        description: "Phòng trọ cách cổng trường ĐHBKHN chỉ 100m, vị trí đắc địa, thuận tiện di chuyển. Phòng vừa được sửa chữa mới, sạch sẽ, đầy đủ tiện nghi cơ bản cho sinh viên.",
+        amenities: ["Wifi", "Điều hòa", "Nóng Lạnh", "Tủ quần áo", "Bàn học", "Phòng tắm riêng", "Gửi Xe"],
         contact: {
-            name: "Cô Hương",
-            phone: "0976543210"
+            name: "Anh Phong",
+            phone: "0943215678"
         },
-        facebook: "https://www.facebook.com/share/p/16LoYjxTM7/",
+        facebook: "https://www.facebook.com/share/p/16HuPDANJM/",
         images: [
-            "https://i.postimg.cc/fbmnq59W/488001164-122164377884341086-5057023262202006330-n.jpg",
-            "https://i.postimg.cc/vmRCn9SJ/489764761-122164377980341086-4927472703824090375-n.jpg",
-            "https://i.postimg.cc/9MbkskF2/488926015-122164377896341086-769440938603375780-n.jpg"
+            "https://i.postimg.cc/ZnQKTbPx/491518804-2026070687883186-7951486829871842642-n.jpg",
+            "https://i.postimg.cc/nVSLK289/491193064-2026070694549852-3324560858356900085-n.jpg",
+            "https://i.postimg.cc/TYy3tbG7/490875799-2026070797883175-4385154634946477561-n.jpg"
         ],
         trustScore: {
-            score: 83,
+            score: 89,
+            details: {
+                source: "Chủ nhà xác thực",
+                lastUpdated: "4 ngày trước",
+                imageQuality: "Hình ảnh chất lượng tốt",
+                contactVerified: true
+            }
+        }
+    },
+    {
+        id: 9,
+        title: "Phòng Trọ Cho Nữ Gần ĐHBKHN",
+        address: "Ngõ 89 Lĩnh Nam, Hoàng Mai, Hà Nội",
+        price: 1700000,
+        size: 16,
+        distance: 1.8,
+        capacity: 1,
+        description: "Phòng trọ dành riêng cho nữ sinh viên, khu vực an ninh, yên tĩnh. Chủ nhà là giáo viên về hưu, thân thiện và quan tâm đến sinh viên như con cái trong nhà.",
+        amenities: ["Wifi", "Quạt", "Nóng Lạnh", "Bàn học", "Phòng tắm chung", "Bếp Chung"],
+        contact: {
+            name: "Cô Lan",
+            phone: "0965432109"
+        },
+        facebook: "https://www.facebook.com/share/p/1A8NLc5dhp/",
+        images: [
+            "https://i.postimg.cc/MpwFKxMw/491429597-1019083140185883-5115786995489123466-n.jpg",
+            "https://i.postimg.cc/6ph18Snv/491157067-1019082740185923-2081099047760599881-n.jpg",
+            "https://i.postimg.cc/GphgGQxS/490968886-1019083213519209-6896301915809265979-n.jpg"
+        ],
+        trustScore: {
+            score: 89,
             details: {
                 source: "Giới thiệu bởi sinh viên",
-                lastUpdated: "10 ngày trước",
+                lastUpdated: "5 ngày trước",
                 imageQuality: "Hình ảnh chất lượng tốt",
                 contactVerified: true
             }
@@ -211,121 +211,31 @@ const accommodations = [
         }
     },
     {
-        id: 8,
-        title: "Phòng Trọ Tiện Nghi Tại Ngõ 68 Triều Khúc",
-        address: "Ngõ 68 Triều Khúc, Thanh Xuân, Hà Nội",
-        price: 2000000,
-        size: 20,
-        distance: 3.5,
+        id: 18,
+        title: "Phòng Trọ An Ninh Cho Nữ",
+        address: "Ngõ 205 Giải Phóng, Hai Bà Trưng, Hà Nội",
+        price: 1800000,
+        size: 15,
+        distance: 1.0,
         capacity: 1,
-        description: "Phòng trọ mới xây dựng và trang bị đầy đủ tiện nghi. Khu vực yên tĩnh, an ninh tốt, gần chợ và cửa hàng tiện lợi. Có xe buýt trực tiếp đến ĐHBKHN.",
-        amenities: ["Wifi", "Điều hòa", "Nóng Lạnh", "Tủ quần áo", "Bàn học", "Phòng tắm riêng"],
+        description: "Phòng trọ dành riêng cho nữ sinh viên, khu vực an ninh, chủ nhà sống cùng. Môi trường sống lành mạnh, đầy đủ tiện nghi, phù hợp với các bạn nữ thích sự riêng tư và an toàn.",
+        amenities: ["Wifi", "Điều hòa", "Nóng Lạnh", "Tủ quần áo", "Bàn học", "Phòng tắm riêng", "Bếp Chung"],
         contact: {
-            name: "Anh Minh",
-            phone: "0932123456"
+            name: "Cô Hồng",
+            phone: "0987654321"
         },
-        facebook: "https://www.facebook.com/share/p/18j4p3mvjY/",
+        facebook: "https://www.facebook.com/share/p/163ogMvqjk/",
         images: [
-            "https://i.postimg.cc/DfD6mhND/487417938-629753463222983-6490049937268215633-n.jpg",
-            "https://i.postimg.cc/fR7fH9bn/488547811-629753526556310-650756717822761582-n.jpg",
-            "https://i.postimg.cc/cJXMWGYF/488834886-629753616556301-7731600739084885466-n.jpg"
+            "https://i.postimg.cc/NFj5sC3B/490099282-1398765724596340-8406190923623997557-n.jpg",
+            "https://i.postimg.cc/j5sjckdP/490222860-1398765697929676-8072249360968656571-n.jpg",
+            "https://i.postimg.cc/2j01cmW6/490043372-1398765827929663-1284165660033537188-n.jpg"
         ],
         trustScore: {
-            score: 76,
-            details: {
-                source: "Người dùng đăng tải",
-                lastUpdated: "12 ngày trước",
-                imageQuality: "Hình ảnh chất lượng khá",
-                contactVerified: true
-            }
-        }
-    },
-    {
-        id: 9,
-        title: "Phòng Trọ Cho Nữ Gần ĐHBKHN",
-        address: "Ngõ 89 Lĩnh Nam, Hoàng Mai, Hà Nội",
-        price: 1700000,
-        size: 16,
-        distance: 1.8,
-        capacity: 1,
-        description: "Phòng trọ dành riêng cho nữ sinh viên, khu vực an ninh, yên tĩnh. Chủ nhà là giáo viên về hưu, thân thiện và quan tâm đến sinh viên như con cái trong nhà.",
-        amenities: ["Wifi", "Quạt", "Nóng Lạnh", "Bàn học", "Phòng tắm chung", "Bếp Chung"],
-        contact: {
-            name: "Cô Lan",
-            phone: "0965432109"
-        },
-        facebook: "https://www.facebook.com/share/p/1A8NLc5dhp/",
-        images: [
-            "https://i.postimg.cc/MpwFKxMw/491429597-1019083140185883-5115786995489123466-n.jpg",
-            "https://i.postimg.cc/6ph18Snv/491157067-1019082740185923-2081099047760599881-n.jpg",
-            "https://i.postimg.cc/GphgGQxS/490968886-1019083213519209-6896301915809265979-n.jpg"
-        ],
-        trustScore: {
-            score: 89,
+            score: 86,
             details: {
                 source: "Giới thiệu bởi sinh viên",
-                lastUpdated: "5 ngày trước",
+                lastUpdated: "7 ngày trước",
                 imageQuality: "Hình ảnh chất lượng tốt",
-                contactVerified: true
-            }
-        }
-    },
-    {
-        id: 10,
-        title: "Căn Hộ Chung Cư Times City",
-        address: "458 Minh Khai, Hai Bà Trưng, Hà Nội",
-        price: 8500000,
-        size: 70,
-        distance: 2.0,
-        capacity: 5,
-        description: "Căn hộ 2 phòng ngủ trong khu đô thị Times City. Đầy đủ nội thất cao cấp, an ninh 24/7, gần trường học, bệnh viện, siêu thị. Lý tưởng cho gia đình hoặc nhóm sinh viên muốn ở chung.",
-        amenities: ["Wifi", "Điều hòa", "Phòng tắm riêng", "Bếp đầy đủ", "Máy giặt", "Bảo vệ", "Hồ bơi", "Phòng gym"],
-        contact: {
-            name: "Anh Hùng",
-            phone: "0901234567"
-        },
-        facebook: "https://www.facebook.com/share/p/19vNikHb91/",
-        images: [
-            "https://i.postimg.cc/qMs1FYm5/490294218-1429965704837584-3278592752812418216-n.jpg",
-            "https://i.postimg.cc/Sxmgbr3N/490405888-1429965714837583-8485645845359675072-n.jpg",
-            "https://i.postimg.cc/52pn4zW5/490420155-1429965771504244-329064986463812953-n.jpg"
-        ],
-        trustScore: {
-            score: 95,
-            details: {
-                source: "Đơn vị bất động sản xác thực",
-                lastUpdated: "1 ngày trước",
-                imageQuality: "Hình ảnh chuyên nghiệp chất lượng cao",
-                contactVerified: true
-            }
-        }
-    },
-    {
-        id: 11,
-        title: "Phòng Trọ Sinh Viên Ngõ 43 Trần Đại Nghĩa",
-        address: "Ngõ 43 Trần Đại Nghĩa, Hai Bà Trưng, Hà Nội",
-        price: 1600000,
-        size: 14,
-        distance: 0.3,
-        capacity: 1,
-        description: "Phòng trọ sinh viên cơ bản, sạch sẽ, ngay sát ĐHBKHN. Không gian nhỏ nhưng đủ dùng cho 1 sinh viên. Khu vực an ninh tốt, nhiều quán ăn xung quanh.",
-        amenities: ["Wifi", "Quạt", "Bàn học", "Tủ quần áo", "Phòng tắm chung", "Gửi Xe"],
-        contact: {
-            name: "Anh Cường",
-            phone: "0978123456"
-        },
-        facebook: "https://www.facebook.com/share/p/15uvFUPsa4/",
-        images: [
-            "https://i.postimg.cc/qMTL2wkX/490714282-2805746546263390-325811304895233753-n.jpg",
-            "https://i.postimg.cc/VksW-VN0J/490263892-2805746682930043-8373964483536589665-n.jpg",
-            "https://i.postimg.cc/25VFCXwm/491240839-2805746836263361-1697548023482117028-n.jpg"
-        ],
-        trustScore: {
-            score: 72,
-            details: {
-                source: "Người dùng đăng tải",
-                lastUpdated: "15 ngày trước",
-                imageQuality: "Hình ảnh chất lượng trung bình",
                 contactVerified: true
             }
         }
@@ -355,96 +265,6 @@ const accommodations = [
             details: {
                 source: "Chủ nhà xác thực",
                 lastUpdated: "6 ngày trước",
-                imageQuality: "Hình ảnh chất lượng tốt",
-                contactVerified: true
-            }
-        }
-    },
-    {
-        id: 13,
-        title: "Phòng Trọ Sinh Viên Ngõ 30 Tạ Quang Bửu",
-        address: "Ngõ 30 Tạ Quang Bửu, Hai Bà Trưng, Hà Nội",
-        price: 1700000,
-        size: 16,
-        distance: 0.5,
-        capacity: 1,
-        description: "Phòng trọ sinh viên gần ĐHBKHN, khu vực tập trung nhiều sinh viên. Phòng mới sơn sửa, sạch sẽ. Chỉ cách cổng trường 5 phút đi bộ.",
-        amenities: ["Wifi", "Quạt", "Nóng Lạnh", "Tủ quần áo", "Phòng tắm chung", "Bàn học"],
-        contact: {
-            name: "Cô Thủy",
-            phone: "0943215678"
-        },
-        facebook: "https://www.facebook.com/share/p/19WHjcsQCm/",
-        images: [
-            "https://i.postimg.cc/VLgjncZm/489309978-1353120975835230-5565613863187394141-n.jpg",
-            "https://i.postimg.cc/nhwBSGtW/490540655-1353121025835225-8160783056574752811-n.jpg",
-            "https://i.postimg.cc/N03TBGF7/490327749-1353121109168550-908369782019407122-n.jpg"
-        ],
-        trustScore: {
-            score: 65,
-            details: {
-                source: "Người dùng đăng tải",
-                lastUpdated: "20 ngày trước",
-                imageQuality: "Hình ảnh chất lượng trung bình",
-                contactVerified: true
-            }
-        }
-    },
-    {
-        id: 14,
-        title: "Căn Hộ 1 Phòng Ngủ The Zei Mỹ Đình",
-        address: "The Zei, Mỹ Đình, Nam Từ Liêm, Hà Nội",
-        price: 9000000,
-        size: 45,
-        distance: 5.0,
-        capacity: 3,
-        description: "Căn hộ cao cấp 1 phòng ngủ tại chung cư The Zei Mỹ Đình. Nội thất đầy đủ, thiết kế hiện đại. Tuy xa trường nhưng có xe bus và dịch vụ shuttle bus đến các trường đại học lớn ở Hà Nội.",
-        amenities: ["Wifi", "Điều hòa", "Smart TV", "Bếp đầy đủ", "Phòng tắm riêng", "Ban công", "Máy giặt", "Bảo vệ 24/7"],
-        contact: {
-            name: "Ms. Ngọc - The Zei Leasing",
-            phone: "0912345678"
-        },
-        facebook: "https://www.facebook.com/share/p/1LQ7YAW9xQ/",
-        images: [
-            "https://i.postimg.cc/RhRn7cRX/490985222-981831020811583-7827945737468951035-n.jpg",
-            "https://i.postimg.cc/sf9SCrr7/490763023-981831070811578-2565676280887981566-n.jpg",
-            "https://i.postimg.cc/8Ppv10p3/490342919-981831104144908-8449971691990451806-n.jpg"
-        ],
-        trustScore: {
-            score: 93,
-            details: {
-                source: "Đơn vị bất động sản xác thực",
-                lastUpdated: "2 ngày trước",
-                imageQuality: "Hình ảnh chuyên nghiệp chất lượng cao",
-                contactVerified: true
-            }
-        }
-    },
-    {
-        id: 15,
-        title: "Phòng Trọ Sinh Viên Gần ĐH Kinh Tế Quốc Dân",
-        address: "Ngõ 95 Chùa Bộc, Đống Đa, Hà Nội",
-        price: 2200000,
-        size: 18,
-        distance: 2.3,
-        capacity: 1,
-        description: "Phòng trọ sinh viên sạch đẹp, gần ĐH Kinh Tế Quốc Dân. Phòng có cửa sổ, thiết bị cơ bản, internet tốc độ cao. Nhiều sinh viên ĐHBKHN cũng lựa chọn khu vực này vì có xe buýt đi lại thuận tiện.",
-        amenities: ["Wifi", "Điều hòa", "Nóng Lạnh", "Tủ quần áo", "Bàn học", "Phòng tắm riêng"],
-        contact: {
-            name: "Anh Đạt",
-            phone: "0965432108"
-        },
-        facebook: "https://www.facebook.com/share/p/1ANhAdYc4z/",
-        images: [
-            "https://i.postimg.cc/TwvyBkNt/490170401-1630900300916777-2007931815167989108-n.jpg",
-            "https://i.postimg.cc/jjDc5Zr6/490346661-1630900357583438-377383386309980650-n.jpg",
-            "https://i.postimg.cc/MTRY0HHv/490757077-1630900370916770-3267509544090241941-n.jpg"
-        ],
-        trustScore: {
-            score: 78,
-            details: {
-                source: "Người dùng đăng tải",
-                lastUpdated: "10 ngày trước",
                 imageQuality: "Hình ảnh chất lượng tốt",
                 contactVerified: true
             }
@@ -481,60 +301,60 @@ const accommodations = [
         }
     },
     {
-        id: 17,
-        title: "Phòng Trọ Giá Rẻ Gần Chợ Mơ",
-        address: "Ngõ 73 Bạch Mai, Hai Bà Trưng, Hà Nội",
-        price: 1400000,
-        size: 12,
-        distance: 1.9,
-        capacity: 1,
-        description: "Phòng trọ giá rẻ gần chợ Mơ, phù hợp cho sinh viên tiết kiệm chi phí. Phòng nhỏ nhưng đầy đủ tiện nghi cơ bản. Khu vực an ninh, nhiều sinh viên ở.",
-        amenities: ["Wifi", "Quạt", "Tủ", "Giường", "Phòng tắm chung", "Bếp Chung"],
+        id: 2,
+        title: "Phòng Ở Ghép Trong Ký Túc Xá Sinh Viên",
+        address: "78 Trần Đại Nghĩa, Bách Khoa, Hai Bà Trưng, Hà Nội",
+        price: 1800000,
+        size: 20,
+        distance: 0.3,
+        capacity: 4,
+        description: "Phòng ở ghép giá rẻ trong tòa nhà dành riêng cho sinh viên. Đã bao gồm tất cả các tiện ích. Khu vực chung bao gồm bếp, phòng khách và không gian học tập. Rất gần khuôn viên ĐHBKHN.",
+        amenities: ["Wifi", "Phòng tắm chung", "Bếp", "Khu vực học tập", "Bảo vệ"],
         contact: {
-            name: "Cô Vân",
-            phone: "0943215678"
+            name: "Văn phòng KTX",
+            phone: "0987654321"
         },
-        facebook: "https://www.facebook.com/share/p/18veTpCPjZ/",
+        facebook: "https://www.facebook.com/share/p/1BcCEpn7sQ/",
         images: [
-            "https://i.postimg.cc/L64z5Ntq/490681098-1709259763132671-6945676756816193424-n.jpg",
-            "https://i.postimg.cc/3JL2vm1t/490656465-1709259789799335-8704463236533186381-n.jpg",
-            "https://i.postimg.cc/CxzkH56S/489925871-1709259753132672-2440690368297691902-n.jpg"
+            "https://i.postimg.cc/dtHCHj2y/490674539-1479879846730195-416531478379605353-n.jpg",
+            "https://i.postimg.cc/TP4GBhkQ/491218329-1479879863396860-2907599218046258333-n.jpg",
+            "https://i.postimg.cc/HLJFcz24/490351324-1479879916730188-8550949005232549928-n.jpg"
         ],
         trustScore: {
-            score: 62,
+            score: 85,
             details: {
-                source: "Người dùng đăng tải",
-                lastUpdated: "30 ngày trước",
-                imageQuality: "Hình ảnh chất lượng trung bình",
+                source: "Đối tác nhà ở của trường",
+                lastUpdated: "7 ngày trước",
+                imageQuality: "Hình ảnh chất lượng tốt",
                 contactVerified: true
             }
         }
     },
     {
-        id: 18,
-        title: "Phòng Trọ An Ninh Cho Nữ",
-        address: "Ngõ 205 Giải Phóng, Hai Bà Trưng, Hà Nội",
-        price: 1800000,
-        size: 15,
-        distance: 1.0,
+        id: 6,
+        title: "Phòng Trọ Sinh Viên Gần Cổng Phụ ĐHBKHN",
+        address: "45 Lê Thanh Nghị, Bách Khoa, Hai Bà Trưng, Hà Nội",
+        price: 1900000,
+        size: 18,
+        distance: 0.2,
         capacity: 1,
-        description: "Phòng trọ dành riêng cho nữ sinh viên, khu vực an ninh, chủ nhà sống cùng. Môi trường sống lành mạnh, đầy đủ tiện nghi, phù hợp với các bạn nữ thích sự riêng tư và an toàn.",
-        amenities: ["Wifi", "Điều hòa", "Nóng Lạnh", "Tủ quần áo", "Bàn học", "Phòng tắm riêng", "Bếp Chung"],
+        description: "Phòng trọ sinh viên sạch sẽ, an ninh, gần cổng phụ ĐHBKHN. Phòng có cửa sổ thoáng mát, không gian riêng tư. Chủ nhà thân thiện, không thu phí gửi xe.",
+        amenities: ["Wifi", "Quạt Trần", "Giường", "Tủ quần áo", "Bàn học", "Gửi Xe Miễn Phí"],
         contact: {
-            name: "Cô Hồng",
-            phone: "0987654321"
+            name: "Cô Hương",
+            phone: "0976543210"
         },
-        facebook: "https://www.facebook.com/share/p/163ogMvqjk/",
+        facebook: "https://www.facebook.com/share/p/16LoYjxTM7/",
         images: [
-            "https://i.postimg.cc/NFj5sC3B/490099282-1398765724596340-8406190923623997557-n.jpg",
-            "https://i.postimg.cc/j5sjckdP/490222860-1398765697929676-8072249360968656571-n.jpg",
-            "https://i.postimg.cc/2j01cmW6/490043372-1398765827929663-1284165660033537188-n.jpg"
+            "https://i.postimg.cc/fbmnq59W/488001164-122164377884341086-5057023262202006330-n.jpg",
+            "https://i.postimg.cc/vmRCn9SJ/489764761-122164377980341086-4927472703824090375-n.jpg",
+            "https://i.postimg.cc/9MbkskF2/488926015-122164377896341086-769440938603375780-n.jpg"
         ],
         trustScore: {
-            score: 86,
+            score: 83,
             details: {
                 source: "Giới thiệu bởi sinh viên",
-                lastUpdated: "7 ngày trước",
+                lastUpdated: "10 ngày trước",
                 imageQuality: "Hình ảnh chất lượng tốt",
                 contactVerified: true
             }
@@ -571,32 +391,212 @@ const accommodations = [
         }
     },
     {
-        id: 20,
-        title: "Phòng Trọ Sinh Viên Cạnh Cổng ĐHBKHN",
-        address: "15 Giáp Nhất, Thanh Xuân, Hà Nội",
-        price: 1900000,
-        size: 18,
-        distance: 0.1,
-        capacity: 1,
-        description: "Phòng trọ cách cổng trường ĐHBKHN chỉ 100m, vị trí đắc địa, thuận tiện di chuyển. Phòng vừa được sửa chữa mới, sạch sẽ, đầy đủ tiện nghi cơ bản cho sinh viên.",
-        amenities: ["Wifi", "Điều hòa", "Nóng Lạnh", "Tủ quần áo", "Bàn học", "Phòng tắm riêng", "Gửi Xe"],
+        id: 3,
+        title: "Căn Hộ 2 Phòng Ngủ Rộng Rãi",
+        address: "25 Đại Cồ Việt, Bách Khoa, Hai Bà Trưng, Hà Nội",
+        price: 6500000,
+        size: 65,
+        distance: 0.7,
+        capacity: 4,
+        description: "Hoàn hảo để ở ghép với bạn, căn hộ 2 phòng ngủ rộng rãi này mang đến sự thoải mái và tiện lợi. Cả hai phòng ngủ đều rộng rãi với Tủ quần áo âm tường. Phòng khách kiểu mở với nhà bếp hiện đại.",
+        amenities: ["Wifi", "Điều hòa", "Phòng tắm riêng", "Bếp", "Ban công", "Máy giặt"],
         contact: {
-            name: "Anh Phong",
-            phone: "0943215678"
+            name: "Anh Tuấn",
+            phone: "0923456789"
         },
-        facebook: "https://www.facebook.com/share/p/16HuPDANJM/",
+        facebook: "https://www.facebook.com/share/p/1E7KAhoQKj/",
         images: [
-            "https://i.postimg.cc/ZnQKTbPx/491518804-2026070687883186-7951486829871842642-n.jpg",
-            "https://i.postimg.cc/nVSLK289/491193064-2026070694549852-3324560858356900085-n.jpg",
-            "https://i.postimg.cc/TYy3tbG7/490875799-2026070797883175-4385154634946477561-n.jpg"
+            "https://i.postimg.cc/6QRYxmcS/490899179-3176031669212652-3823758644167278364-n.jpg",
+            "https://i.postimg.cc/VLpqsFJc/490715169-3176031675879318-3696369309830022704-n.jpg",
+            "https://i.postimg.cc/Zn9WX1Fv/490919926-3176031699212649-7224704188281478044-n.jpg"
         ],
         trustScore: {
-            score: 89,
+            score: 78,
             details: {
-                source: "Chủ nhà xác thực",
-                lastUpdated: "4 ngày trước",
+                source: "Người dùng đăng tải",
+                lastUpdated: "14 ngày trước",
                 imageQuality: "Hình ảnh chất lượng tốt",
                 contactVerified: true
+            }
+        }
+    },
+    {
+        id: 15,
+        title: "Phòng Trọ Sinh Viên Gần ĐH Kinh Tế Quốc Dân",
+        address: "Ngõ 95 Chùa Bộc, Đống Đa, Hà Nội",
+        price: 2200000,
+        size: 18,
+        distance: 2.3,
+        capacity: 1,
+        description: "Phòng trọ sinh viên sạch đẹp, gần ĐH Kinh Tế Quốc Dân. Phòng có cửa sổ, thiết bị cơ bản, internet tốc độ cao. Nhiều sinh viên ĐHBKHN cũng lựa chọn khu vực này vì có xe buýt đi lại thuận tiện.",
+        amenities: ["Wifi", "Điều hòa", "Nóng Lạnh", "Tủ quần áo", "Bàn học", "Phòng tắm riêng"],
+        contact: {
+            name: "Anh Đạt",
+            phone: "0965432108"
+        },
+        facebook: "https://www.facebook.com/share/p/1ANhAdYc4z/",
+        images: [
+            "https://i.postimg.cc/TwvyBkNt/490170401-1630900300916777-2007931815167989108-n.jpg",
+            "https://i.postimg.cc/jjDc5Zr6/490346661-1630900357583438-377383386309980650-n.jpg",
+            "https://i.postimg.cc/MTRY0HHv/490757077-1630900370916770-3267509544090241941-n.jpg"
+        ],
+        trustScore: {
+            score: 78,
+            details: {
+                source: "Người dùng đăng tải",
+                lastUpdated: "10 ngày trước",
+                imageQuality: "Hình ảnh chất lượng tốt",
+                contactVerified: true
+            }
+        }
+    },
+    {
+        id: 8,
+        title: "Phòng Trọ Tiện Nghi Tại Ngõ 68 Triều Khúc",
+        address: "Ngõ 68 Triều Khúc, Thanh Xuân, Hà Nội",
+        price: 2000000,
+        size: 20,
+        distance: 3.5,
+        capacity: 1,
+        description: "Phòng trọ mới xây dựng và trang bị đầy đủ tiện nghi. Khu vực yên tĩnh, an ninh tốt, gần chợ và cửa hàng tiện lợi. Có xe buýt trực tiếp đến ĐHBKHN.",
+        amenities: ["Wifi", "Điều hòa", "Nóng Lạnh", "Tủ quần áo", "Bàn học", "Phòng tắm riêng"],
+        contact: {
+            name: "Anh Minh",
+            phone: "0932123456"
+        },
+        facebook: "https://www.facebook.com/share/p/18j4p3mvjY/",
+        images: [
+            "https://i.postimg.cc/DfD6mhND/487417938-629753463222983-6490049937268215633-n.jpg",
+            "https://i.postimg.cc/fR7fH9bn/488547811-629753526556310-650756717822761582-n.jpg",
+            "https://i.postimg.cc/cJXMWGYF/488834886-629753616556301-7731600739084885466-n.jpg"
+        ],
+        trustScore: {
+            score: 76,
+            details: {
+                source: "Người dùng đăng tải",
+                lastUpdated: "12 ngày trước",
+                imageQuality: "Hình ảnh chất lượng khá",
+                contactVerified: true
+            }
+        }
+    },
+    {
+        id: 11,
+        title: "Phòng Trọ Sinh Viên Ngõ 43 Trần Đại Nghĩa",
+        address: "Ngõ 43 Trần Đại Nghĩa, Hai Bà Trưng, Hà Nội",
+        price: 1600000,
+        size: 14,
+        distance: 0.3,
+        capacity: 1,
+        description: "Phòng trọ sinh viên cơ bản, sạch sẽ, ngay sát ĐHBKHN. Không gian nhỏ nhưng đủ dùng cho 1 sinh viên. Khu vực an ninh tốt, nhiều quán ăn xung quanh.",
+        amenities: ["Wifi", "Quạt", "Bàn học", "Tủ quần áo", "Phòng tắm chung", "Gửi Xe"],
+        contact: {
+            name: "Anh Cường",
+            phone: "0978123456"
+        },
+        facebook: "https://www.facebook.com/share/p/15uvFUPsa4/",
+        images: [
+            "https://i.postimg.cc/qMTL2wkX/490714282-2805746546263390-325811304895233753-n.jpg",
+            "https://i.postimg.cc/VksW-VN0J/490263892-2805746682930043-8373964483536589665-n.jpg",
+            "https://i.postimg.cc/25VFCXwm/491240839-2805746836263361-1697548023482117028-n.jpg"
+        ],
+        trustScore: {
+            score: 72,
+            details: {
+                source: "Người dùng đăng tải",
+                lastUpdated: "15 ngày trước",
+                imageQuality: "Hình ảnh chất lượng trung bình",
+                contactVerified: true
+            }
+        }
+    },
+    {
+        id: 13,
+        title: "Phòng Trọ Sinh Viên Ngõ 30 Tạ Quang Bửu",
+        address: "Ngõ 30 Tạ Quang Bửu, Hai Bà Trưng, Hà Nội",
+        price: 1700000,
+        size: 16,
+        distance: 0.5,
+        capacity: 1,
+        description: "Phòng trọ sinh viên gần ĐHBKHN, khu vực tập trung nhiều sinh viên. Phòng mới sơn sửa, sạch sẽ. Chỉ cách cổng trường 5 phút đi bộ.",
+        amenities: ["Wifi", "Quạt", "Nóng Lạnh", "Tủ quần áo", "Phòng tắm chung", "Bàn học"],
+        contact: {
+            name: "Cô Thủy",
+            phone: "0943215678"
+        },
+        facebook: "https://www.facebook.com/share/p/19WHjcsQCm/",
+        images: [
+            "https://i.postimg.cc/VLgjncZm/489309978-1353120975835230-5565613863187394141-n.jpg",
+            "https://i.postimg.cc/nhwBSGtW/490540655-1353121025835225-8160783056574752811-n.jpg",
+            "https://i.postimg.cc/N03TBGF7/490327749-1353121109168550-908369782019407122-n.jpg"
+        ],
+        trustScore: {
+            score: 65,
+            details: {
+                source: "Người dùng đăng tải",
+                lastUpdated: "20 ngày trước",
+                imageQuality: "Hình ảnh chất lượng trung bình",
+                contactVerified: true
+            }
+        }
+    },
+    {
+        id: 17,
+        title: "Phòng Trọ Giá Rẻ Gần Chợ Mơ",
+        address: "Ngõ 73 Bạch Mai, Hai Bà Trưng, Hà Nội",
+        price: 1400000,
+        size: 12,
+        distance: 1.9,
+        capacity: 1,
+        description: "Phòng trọ giá rẻ gần chợ Mơ, phù hợp cho sinh viên tiết kiệm chi phí. Phòng nhỏ nhưng đầy đủ tiện nghi cơ bản. Khu vực an ninh, nhiều sinh viên ở.",
+        amenities: ["Wifi", "Quạt", "Tủ", "Giường", "Phòng tắm chung", "Bếp Chung"],
+        contact: {
+            name: "Cô Vân",
+            phone: "0943215678"
+        },
+        facebook: "https://www.facebook.com/share/p/18veTpCPjZ/",
+        images: [
+            "https://i.postimg.cc/L64z5Ntq/490681098-1709259763132671-6945676756816193424-n.jpg",
+            "https://i.postimg.cc/3JL2vm1t/490656465-1709259789799335-8704463236533186381-n.jpg",
+            "https://i.postimg.cc/CxzkH56S/489925871-1709259753132672-2440690368297691902-n.jpg"
+        ],
+        trustScore: {
+            score: 62,
+            details: {
+                source: "Người dùng đăng tải",
+                lastUpdated: "30 ngày trước",
+                imageQuality: "Hình ảnh chất lượng trung bình",
+                contactVerified: true
+            }
+        }
+    },
+    {
+        id: 4,
+        title: "Phòng Giá Rẻ Gần ĐHBKHN",
+        address: "120 Tạ Quang Bửu, Bách Khoa, Hai Bà Trưng, Hà Nội",
+        price: 1500000,
+        size: 15,
+        distance: 0.4,
+        capacity: 1,
+        description: "Phòng đơn giá rẻ trong nhà ở ghép. Phù hợp cho sinh viên có ngân sách hạn chế. Phòng tắm và bếp dùng chung với 3 người khác. Tất cả hóa đơn đã bao gồm trong tiền thuê.",
+        amenities: ["Wifi", "Phòng tắm chung", "Bếp Chung", "Bàn học"],
+        contact: {
+            name: "Anh Đức",
+            phone: "0912876543"
+        },
+        facebook: "https://www.facebook.com/share/p/198zisrLbg/",
+        images: [
+            "https://i.postimg.cc/qBXBvBgB/490192866-122107168268831508-1979044362334190204-n.jpg",
+            "https://i.postimg.cc/qBXBvBgB/490192866-122107168268831508-1979044362334190204-n.jpg",
+            "https://i.postimg.cc/qBXBvBgB/490192866-122107168268831508-1979044362334190204-n.jpg"
+        ],
+        trustScore: {
+            score: 55,
+            details: {
+                source: "Dữ liệu từ trang web cho thuê",
+                lastUpdated: "45 ngày trước",
+                imageQuality: "Hình ảnh chất lượng thấp",
+                contactVerified: false
             }
         }
     }
@@ -604,6 +604,11 @@ const accommodations = [
 
 // Base API URL
 const API_BASE_URL = 'https://hustboardingradar.onrender.com/api';
+
+// Health check configuration
+const HEALTH_CHECK_INTERVAL = 30000; // 30 seconds
+let backendStatus = 'unknown'; // 'online', 'offline', or 'unknown'
+let healthCheckTimer = null;
 
 // Function to convert postimg short URLs to full direct image URLs
 function convertToFullImageUrl(shortUrl) {
@@ -656,11 +661,98 @@ document.addEventListener('DOMContentLoaded', function () {
     // Selected amenities for filtering
     let selectedAmenities = [];
 
+    // Create and add loading spinners
+    const accommodationsSpinner = createLoadingSpinner();
+    const amenitiesSpinner = createLoadingSpinner();
+
+    // Function to create a loading spinner
+    function createLoadingSpinner() {
+        const spinnerContainer = document.createElement('div');
+        spinnerContainer.className = 'loading-spinner-container';
+
+        const spinner = document.createElement('div');
+        spinner.className = 'spinner';
+
+        spinnerContainer.appendChild(spinner);
+        return spinnerContainer;
+    }
+
+    // Initialize health check
+    startHealthCheck();
+
     // Initialize data by fetching from API
     initializeData();
 
+    // Health check functions
+    function startHealthCheck() {
+        // Perform an immediate health check
+        checkBackendHealth();
+
+        // Set up periodic health checks
+        healthCheckTimer = setInterval(checkBackendHealth, HEALTH_CHECK_INTERVAL);
+    }
+
+    function checkBackendHealth() {
+        fetch(`${API_BASE_URL}/health-check/server`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            // Include timeout to prevent long-hanging requests
+            signal: AbortSignal.timeout(70000) // 70 second timeout
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Health check failed: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data && data.health === 'OK') {
+                    if (backendStatus !== 'online') {
+                        console.log('Backend is online');
+                        backendStatus = 'online';
+                        // If backend was previously offline and is now online, try fetching data again
+                        if (fetchedRooms.length === 0) {
+                            initializeData();
+                        }
+                    }
+                } else {
+                    throw new Error('Invalid health check response');
+                }
+            })
+            .catch(error => {
+                console.error('Backend health check failed:', error);
+                if (backendStatus !== 'offline') {
+                    console.log('Backend is offline');
+                    backendStatus = 'offline';
+                    // Optionally show a message to the user that the backend is unavailable
+                }
+            });
+    }
+
+    // Stop health checks when page is hidden or closed
+    document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') {
+            // Clear interval when page is not visible
+            if (healthCheckTimer) {
+                clearInterval(healthCheckTimer);
+                healthCheckTimer = null;
+            }
+        } else {
+            // Restart health checks when page becomes visible again
+            if (!healthCheckTimer) {
+                startHealthCheck();
+            }
+        }
+    });
+
     async function initializeData() {
         try {
+            // Show loading spinners
+            showAmenitiesLoading();
+            showAccommodationsLoading();
+
             // Fetch amenities first
             await fetchAmenities();
 
@@ -671,6 +763,33 @@ document.addEventListener('DOMContentLoaded', function () {
             // If API calls fail, use mock data
             renderAccommodations(accommodations);
             resultsCount.textContent = `(${accommodations.length})`;
+        } finally {
+            // Hide loading spinners regardless of success or failure
+            hideAmenitiesLoading();
+            hideAccommodationsLoading();
+        }
+    }
+
+    // Show/hide loading spinners
+    function showAccommodationsLoading() {
+        accommodationsList.innerHTML = '';
+        accommodationsList.appendChild(accommodationsSpinner);
+    }
+
+    function hideAccommodationsLoading() {
+        if (accommodationsSpinner.parentNode === accommodationsList) {
+            accommodationsList.removeChild(accommodationsSpinner);
+        }
+    }
+
+    function showAmenitiesLoading() {
+        amenitiesContainer.innerHTML = '';
+        amenitiesContainer.appendChild(amenitiesSpinner);
+    }
+
+    function hideAmenitiesLoading() {
+        if (amenitiesSpinner.parentNode === amenitiesContainer) {
+            amenitiesContainer.removeChild(amenitiesSpinner);
         }
     }
 
@@ -696,6 +815,8 @@ document.addEventListener('DOMContentLoaded', function () {
             renderAmenitiesFilter(availableAmenities);
         } catch (error) {
             console.error('Error fetching amenities:', error);
+            // Use default amenities in the HTML
+            hideAmenitiesLoading();
             throw error;
         }
     }
@@ -1065,66 +1186,80 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Apply filters
     function applyFilters() {
-        const minPrice = minPriceInput.value ? parseInt(minPriceInput.value) : 0;
-        const maxPrice = maxPriceInput.value ? parseInt(maxPriceInput.value) : Number.MAX_SAFE_INTEGER;
-        const maxDistance = parseFloat(distanceInput.value);
-        const minTrustScore = parseInt(minTrustScoreInput.value);
+        // Show loading spinner while filtering
+        showAccommodationsLoading();
 
-        // Use fetchedRooms as the source for filtering
-        const roomsToFilter = fetchedRooms.length > 0 ? fetchedRooms : accommodations;
+        setTimeout(() => {
+            const minPrice = minPriceInput.value ? parseInt(minPriceInput.value) : 0;
+            const maxPrice = maxPriceInput.value ? parseInt(maxPriceInput.value) : Number.MAX_SAFE_INTEGER;
+            const maxDistance = parseFloat(distanceInput.value);
+            const minTrustScore = parseInt(minTrustScoreInput.value);
 
-        const filteredAccommodations = roomsToFilter.filter(acc => {
-            // Price filters
-            if (acc.price < minPrice || acc.price > maxPrice) {
-                return false;
-            }
+            // Use fetchedRooms as the source for filtering
+            const roomsToFilter = fetchedRooms.length > 0 ? fetchedRooms : accommodations;
 
-            // Distance filter
-            if (acc.distance > maxDistance) {
-                return false;
-            }
+            const filteredAccommodations = roomsToFilter.filter(acc => {
+                // Price filters
+                if (acc.price < minPrice || acc.price > maxPrice) {
+                    return false;
+                }
 
-            // Trust score filter
-            if (acc.trustScore.score < minTrustScore) {
-                return false;
-            }
+                // Distance filter
+                if (acc.distance > maxDistance) {
+                    return false;
+                }
 
-            // Amenities filters - using the selected amenities from checkboxes
-            if (selectedAmenities.length > 0) {
-                // Check if the room has all the selected amenities
-                for (const amenity of selectedAmenities) {
-                    if (!acc.amenities.includes(amenity)) {
-                        return false;
+                // Trust score filter
+                if (acc.trustScore.score < minTrustScore) {
+                    return false;
+                }
+
+                // Amenities filters - using the selected amenities from checkboxes
+                if (selectedAmenities.length > 0) {
+                    // Check if the room has all the selected amenities
+                    for (const amenity of selectedAmenities) {
+                        if (!acc.amenities.includes(amenity)) {
+                            return false;
+                        }
                     }
                 }
-            }
 
-            return true;
-        });
+                return true;
+            });
 
-        renderAccommodations(filteredAccommodations);
-        resultsCount.textContent = `(${filteredAccommodations.length})`;
+            renderAccommodations(filteredAccommodations);
+            resultsCount.textContent = `(${filteredAccommodations.length})`;
+            hideAccommodationsLoading();
+        }, 300); // Add a small delay to show the spinner (better UX)
     }
 
     // Reset filters
     function resetFilters() {
-        minPriceInput.value = '';
-        maxPriceInput.value = '';
-        distanceInput.value = 3;
-        distanceValue.textContent = '3 km';
-        minTrustScoreInput.value = 50;
-        trustScoreValue.textContent = '50';
+        // Show loading spinner while resetting
+        showAccommodationsLoading();
 
-        // Clear amenity checkboxes
-        const amenityCheckboxes = document.querySelectorAll('#amenities-container input[type="checkbox"]');
-        amenityCheckboxes.forEach(checkbox => {
-            checkbox.checked = false;
-        });
-        selectedAmenities = [];
+        setTimeout(() => {
+            minPriceInput.value = '';
+            maxPriceInput.value = '';
+            distanceInput.value = 3;
+            distanceValue.textContent = '3 km';
+            minTrustScoreInput.value = 50;
+            trustScoreValue.textContent = '50';
 
-        // Reset to all rooms from API or mock data
-        const roomsToRender = fetchedRooms.length > 0 ? fetchedRooms : accommodations;
-        renderAccommodations(roomsToRender);
-        resultsCount.textContent = `(${roomsToRender.length})`;
+            // Clear amenity checkboxes
+            const amenityCheckboxes = document.querySelectorAll('#amenities-container input[type="checkbox"]');
+            amenityCheckboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            selectedAmenities = [];
+
+            // Reset to all rooms from API or mock data
+            const roomsToRender = fetchedRooms.length > 0 ? fetchedRooms : accommodations;
+            renderAccommodations(roomsToRender);
+            resultsCount.textContent = `(${roomsToRender.length})`;
+            hideAccommodationsLoading();
+        }, 300); // Add a small delay to show the spinner (better UX)
     }
+
+    // Rest of the code remains unchanged
 });
