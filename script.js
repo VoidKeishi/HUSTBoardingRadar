@@ -21,7 +21,7 @@ const accommodations = [
             "https://i.postimg.cc/52pn4zW5/490420155-1429965771504244-329064986463812953-n.jpg"
         ],
         trustScore: {
-            score: 95,
+            score: 5,
             details: {
                 source: "Đơn vị bất động sản xác thực",
                 lastUpdated: "1 ngày trước",
@@ -51,7 +51,7 @@ const accommodations = [
             "https://i.postimg.cc/CMf1bBGG/490447285-1814084669510004-8663576387664853209-n.jpg"
         ],
         trustScore: {
-            score: 92,
+            score: 5,
             details: {
                 source: "Chủ nhà xác thực",
                 lastUpdated: "2 ngày trước",
@@ -81,7 +81,7 @@ const accommodations = [
             "https://i.postimg.cc/8Ppv10p3/490342919-981831104144908-8449971691990451806-n.jpg"
         ],
         trustScore: {
-            score: 93,
+            score: 5,
             details: {
                 source: "Đơn vị bất động sản xác thực",
                 lastUpdated: "2 ngày trước",
@@ -111,7 +111,7 @@ const accommodations = [
             "https://i.postimg.cc/pL9tzPVF/490111205-1347113613034383-982229061180454271-n.jpg"
         ],
         trustScore: {
-            score: 90,
+            score: 5,
             details: {
                 source: "Đơn vị bất động sản xác thực",
                 lastUpdated: "5 ngày trước",
@@ -141,7 +141,7 @@ const accommodations = [
             "https://i.postimg.cc/TYy3tbG7/490875799-2026070797883175-4385154634946477561-n.jpg"
         ],
         trustScore: {
-            score: 89,
+            score: 5,
             details: {
                 source: "Chủ nhà xác thực",
                 lastUpdated: "4 ngày trước",
@@ -171,7 +171,7 @@ const accommodations = [
             "https://i.postimg.cc/GphgGQxS/490968886-1019083213519209-6896301915809265979-n.jpg"
         ],
         trustScore: {
-            score: 89,
+            score: 5,
             details: {
                 source: "Giới thiệu bởi sinh viên",
                 lastUpdated: "5 ngày trước",
@@ -201,7 +201,7 @@ const accommodations = [
             "https://i.postimg.cc/8zLtqYtY/490106119-122151509642484518-8167782340735027549-n.jpg"
         ],
         trustScore: {
-            score: 88,
+            score: 5,
             details: {
                 source: "Chủ nhà xác thực",
                 lastUpdated: "3 ngày trước",
@@ -231,7 +231,7 @@ const accommodations = [
             "https://i.postimg.cc/2j01cmW6/490043372-1398765827929663-1284165660033537188-n.jpg"
         ],
         trustScore: {
-            score: 86,
+            score: 5,
             details: {
                 source: "Giới thiệu bởi sinh viên",
                 lastUpdated: "7 ngày trước",
@@ -261,7 +261,7 @@ const accommodations = [
             "https://i.postimg.cc/v8W78nW1/491761327-1781111536173864-5364395408936406185-n.jpg"
         ],
         trustScore: {
-            score: 86,
+            score: 5,
             details: {
                 source: "Chủ nhà xác thực",
                 lastUpdated: "6 ngày trước",
@@ -291,7 +291,7 @@ const accommodations = [
             "https://i.postimg.cc/RCL7vjH5/490764540-1887264478678455-5451050027204425021-n.jpg"
         ],
         trustScore: {
-            score: 84,
+            score: 5,
             details: {
                 source: "Chủ nhà xác thực",
                 lastUpdated: "8 ngày trước",
@@ -321,7 +321,7 @@ const accommodations = [
             "https://i.postimg.cc/HLJFcz24/490351324-1479879916730188-8550949005232549928-n.jpg"
         ],
         trustScore: {
-            score: 85,
+            score: 5,
             details: {
                 source: "Đối tác nhà ở của trường",
                 lastUpdated: "7 ngày trước",
@@ -351,7 +351,7 @@ const accommodations = [
             "https://i.postimg.cc/9MbkskF2/488926015-122164377896341086-769440938603375780-n.jpg"
         ],
         trustScore: {
-            score: 83,
+            score: 5,
             details: {
                 source: "Giới thiệu bởi sinh viên",
                 lastUpdated: "10 ngày trước",
@@ -381,7 +381,7 @@ const accommodations = [
             "https://i.postimg.cc/QdQszkzb/491430702-2744306169101621-8055338190020763035-n.jpg"
         ],
         trustScore: {
-            score: 82,
+            score: 5,
             details: {
                 source: "Người dùng đăng tải",
                 lastUpdated: "9 ngày trước",
@@ -411,7 +411,7 @@ const accommodations = [
             "https://i.postimg.cc/Zn9WX1Fv/490919926-3176031699212649-7224704188281478044-n.jpg"
         ],
         trustScore: {
-            score: 78,
+            score: 4,
             details: {
                 source: "Người dùng đăng tải",
                 lastUpdated: "14 ngày trước",
@@ -441,7 +441,7 @@ const accommodations = [
             "https://i.postimg.cc/MTRY0HHv/490757077-1630900370916770-3267509544090241941-n.jpg"
         ],
         trustScore: {
-            score: 78,
+            score: 4,
             details: {
                 source: "Người dùng đăng tải",
                 lastUpdated: "10 ngày trước",
@@ -471,7 +471,7 @@ const accommodations = [
             "https://i.postimg.cc/cJXMWGYF/488834886-629753616556301-7731600739084885466-n.jpg"
         ],
         trustScore: {
-            score: 76,
+            score: 4,
             details: {
                 source: "Người dùng đăng tải",
                 lastUpdated: "12 ngày trước",
@@ -501,7 +501,7 @@ const accommodations = [
             "https://i.postimg.cc/25VFCXwm/491240839-2805746836263361-1697548023482117028-n.jpg"
         ],
         trustScore: {
-            score: 72,
+            score: 4,
             details: {
                 source: "Người dùng đăng tải",
                 lastUpdated: "15 ngày trước",
@@ -531,7 +531,7 @@ const accommodations = [
             "https://i.postimg.cc/N03TBGF7/490327749-1353121109168550-908369782019407122-n.jpg"
         ],
         trustScore: {
-            score: 65,
+            score: 4,
             details: {
                 source: "Người dùng đăng tải",
                 lastUpdated: "20 ngày trước",
@@ -561,7 +561,7 @@ const accommodations = [
             "https://i.postimg.cc/CxzkH56S/489925871-1709259753132672-2440690368297691902-n.jpg"
         ],
         trustScore: {
-            score: 62,
+            score: 4,
             details: {
                 source: "Người dùng đăng tải",
                 lastUpdated: "30 ngày trước",
@@ -591,7 +591,7 @@ const accommodations = [
             "https://i.postimg.cc/qBXBvBgB/490192866-122107168268831508-1979044362334190204-n.jpg"
         ],
         trustScore: {
-            score: 55,
+            score: 3,
             details: {
                 source: "Dữ liệu từ trang web cho thuê",
                 lastUpdated: "45 ngày trước",
@@ -638,10 +638,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeModal = document.querySelector('.close-modal');
     const modalContent = document.getElementById('modal-content-container');
     const resultsCount = document.getElementById('results-count');
-
-    // View Toggle Buttons
-    const gridViewBtn = document.getElementById('grid-view');
-    const listViewBtn = document.getElementById('list-view');
 
     // Filter elements
     const minPriceInput = document.getElementById('min-price');
@@ -962,52 +958,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return null;
     }
 
-    // View Toggle Event Listeners
-    gridViewBtn.addEventListener('click', function () {
-        if (!accommodationsList.classList.contains('grid-view')) {
-            accommodationsList.classList.remove('list-view');
-            accommodationsList.classList.add('grid-view');
-            gridViewBtn.classList.add('active');
-            listViewBtn.classList.remove('active');
-
-            // Save preference to localStorage
-            localStorage.setItem('viewPreference', 'grid');
-        }
-    });
-
-    listViewBtn.addEventListener('click', function () {
-        if (!accommodationsList.classList.contains('list-view')) {
-            accommodationsList.classList.remove('grid-view');
-            accommodationsList.classList.add('list-view');
-            listViewBtn.classList.add('active');
-            gridViewBtn.classList.remove('active');
-
-            // Save preference to localStorage
-            localStorage.setItem('viewPreference', 'list');
-        }
-    });
-
-    // Check for saved view preference
-    const savedViewPreference = localStorage.getItem('viewPreference');
-    if (savedViewPreference === 'list') {
-        listViewBtn.click();
-    } else {
-        gridViewBtn.click(); // Default to grid view
-    }
-
-    // Input event listeners for range inputs
-    distanceInput.addEventListener('input', function () {
-        distanceValue.textContent = `${this.value} km`;
-    });
-
-    minTrustScoreInput.addEventListener('input', function () {
-        trustScoreValue.textContent = this.value;
-    });
-
-    // Filter buttons event listeners
-    applyFiltersBtn.addEventListener('click', applyFilters);
-    resetFiltersBtn.addEventListener('click', resetFilters);
-
     // Modal close event
     closeModal.addEventListener('click', function () {
         accommodationModal.style.display = 'none';
@@ -1039,9 +989,9 @@ document.addEventListener('DOMContentLoaded', function () {
         let trustScoreClass = '';
         let trustScore = accommodation.trustScore.score;
 
-        if (trustScore >= 80) {
+        if (trustScore >= 4) {
             trustScoreClass = 'high-score';
-        } else if (trustScore >= 60) {
+        } else if (trustScore === 3) {
             trustScoreClass = 'medium-score';
         } else {
             trustScoreClass = 'low-score';
@@ -1122,9 +1072,9 @@ document.addEventListener('DOMContentLoaded', function () {
         let trustScoreClass = '';
         let trustScore = accommodation.trustScore.score;
 
-        if (trustScore >= 80) {
+        if (trustScore >= 4) {
             trustScoreClass = 'high-score';
-        } else if (trustScore >= 60) {
+        } else if (trustScore === 3) {
             trustScoreClass = 'medium-score';
         } else {
             trustScoreClass = 'low-score';
@@ -1163,7 +1113,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         </div>
                     </div>
                     
-                    <div class="detailed-trust-score ${trustScoreClass}" style="border-color: var(--${trustScore >= 80 ? 'success' : trustScore >= 60 ? 'warning' : 'danger'}-color);">
+                    <div class="detailed-trust-score ${trustScoreClass}" style="border-color: var(--${trustScore >= 4 ? 'success' : trustScore === 3 ? 'warning' : 'danger'}-color);">
                         <div class="score-value">${trustScore}</div>
                         <div class="score-details">
                             <h4>Độ Tin Cậy</h4>
@@ -1209,7 +1159,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     return false;
                 }
 
-                // Trust score filter
+                // Trust score filter - now using 1-5 scale
                 if (acc.trustScore.score < minTrustScore) {
                     return false;
                 }
@@ -1243,8 +1193,8 @@ document.addEventListener('DOMContentLoaded', function () {
             maxPriceInput.value = '';
             distanceInput.value = 3;
             distanceValue.textContent = '3 km';
-            minTrustScoreInput.value = 50;
-            trustScoreValue.textContent = '50';
+            minTrustScoreInput.value = 1;
+            trustScoreValue.textContent = '1';
 
             // Clear amenity checkboxes
             const amenityCheckboxes = document.querySelectorAll('#amenities-container input[type="checkbox"]');
@@ -1260,6 +1210,18 @@ document.addEventListener('DOMContentLoaded', function () {
             hideAccommodationsLoading();
         }, 300); // Add a small delay to show the spinner (better UX)
     }
+
+    // Add event listeners for filter controls
+    distanceInput.addEventListener('input', function () {
+        distanceValue.textContent = this.value + ' km';
+    });
+
+    minTrustScoreInput.addEventListener('input', function () {
+        trustScoreValue.textContent = this.value;
+    });
+
+    applyFiltersBtn.addEventListener('click', applyFilters);
+    resetFiltersBtn.addEventListener('click', resetFilters);
 
     // Rest of the code remains unchanged
 });

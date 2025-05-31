@@ -28,9 +28,9 @@
                 <div class="filter-group">
                     <label for="price-range">Khoảng Giá (VND)</label>
                     <div class="price-inputs">
-                        <input type="number" id="min-price" placeholder="Tối thiểu" min="0">
+                        <input type="number" id="min-price" placeholder="Tối thiểu" min="0" step="500000">
                         <span>-</span>
-                        <input type="number" id="max-price" placeholder="Tối đa" min="0">
+                        <input type="number" id="max-price" placeholder="Tối đa" min="0" step="500000">
                     </div>
                 </div>
 
@@ -64,8 +64,8 @@
 
                 <div class="filter-group">
                     <label for="min-trust-score">Điểm Tin Cậy Tối Thiểu</label>
-                    <input type="range" id="min-trust-score" min="0" max="100" step="10" value="50">
-                    <span id="trust-score-value">50</span>
+                    <input type="range" id="min-trust-score" min="1" max="5" step="1" value="1">
+                    <span id="trust-score-value">1</span>
                 </div>
 
                 <button id="apply-filters" class="btn">Áp Dụng Bộ Lọc</button>
@@ -77,14 +77,6 @@
             <section class="results-section">
                 <div class="results-header">
                     <h2>Phòng Trọ Hiện Có <span id="results-count">(20)</span></h2>
-                    <div class="view-toggle">
-                        <button id="grid-view" class="view-button active" title="Dạng lưới">
-                            <i class="fas fa-th-large"></i>
-                        </button>
-                        <button id="list-view" class="view-button" title="Dạng danh sách">
-                            <i class="fas fa-list"></i>
-                        </button>
-                    </div>
                 </div>
 
                 <div class="accommodations-list grid-view" id="accommodations-list">
