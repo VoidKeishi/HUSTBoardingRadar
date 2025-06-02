@@ -4,68 +4,75 @@ const roomSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: true,
+      default: '',
     },
     address: {
       type: String,
-      required: true,
+      default: '',
+    },
+    area: {
+      type: Number,
+      default: 0,
     },
     price: {
       type: Number,
-      required: true,
+      default: 0,
     },
     distance: {
       type: Number,
-      required: true,
+      default: 0,
     },
     capacity: {
       type: Number,
-      required: true,
+      default: 0,
     },
     description: {
       type: String,
-      required: true,
+      default: '',
     },
     amenities: [{
       type: String,
-      required: true,
     }],
     contact: {
       name: {
         type: String,
-        required: true,
+        default: '',
       },
       phone: {
         type: String,
-        required: true,
+        default: '',
       },
     },
     facebookLink: {
       type: String,
-      required: true,
+      default: '',
     },
     images: [String],
     trustScore: {
       score: {
         type: Number,
-        required: true,
+        default: 0,
       },
       details: {
         source: {
           type: String,
-          required: true,
+          default: '',
         },
         lastUpdated: {
           type: Date,
-          required: true,
+          default: null,
         },
         imageQuality: {
           type: String,
-          required: true,
+          default: '',
         },
         contactVerified: {
           type: Boolean,
-          required: true,
+          default: false
+        },
+        priceAcceptable: {
+          type: Boolean,
+          default: false,
         }
       }
     }

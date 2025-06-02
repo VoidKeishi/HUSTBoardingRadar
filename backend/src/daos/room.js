@@ -58,38 +58,7 @@ const findAllRooms = async () => {
       return [];
     }
 
-    // Get all unique amenity codes from all rooms
-    const allAmenityCodes = new Set();
-    rooms.forEach(room => {
-      if (room.amenities && room.amenities.length > 0) {
-        room.amenities.forEach(code => allAmenityCodes.add(code));
-      }
-    });
-
-    // Fetch all amenities in one query
-    const amenities = await Amenity.find({
-      code: { $in: Array.from(allAmenityCodes) }
-    });
-
-    // Create a map of code to name for quick lookup
-    const amenityMap = {};
-    amenities.forEach(amenity => {
-      amenityMap[amenity.code] = amenity.name;
-    });
-
-    // Replace amenity codes with objects containing code and name
-    const roomsWithAmenities = rooms.map(room => {
-      const roomObj = room.toObject();
-      if (roomObj.amenities && roomObj.amenities.length > 0) {
-        roomObj.amenities = roomObj.amenities.map(code => ({
-          code,
-          name: amenityMap[code] || code // Fallback to code if name not found
-        }));
-      }
-      return roomObj;
-    });
-
-    return roomsWithAmenities;
+    return rooms;
   } catch (error) {
     console.error('Error finding all rooms:', error);
     throw error;

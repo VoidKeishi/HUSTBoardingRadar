@@ -11,7 +11,13 @@ const findAllRecommendedRooms = async (req, res) => {
   res.json(rooms);
 }
 
+const createNewRoom = async (req, res) => {
+  const newRoom = await roomService.createNewRoom(req.body);
+  res.json(newRoom);
+}
+
 module.exports = {
   findOneRoom,
   findAllRecommendedRooms,
+  createNewRoom,
 }
