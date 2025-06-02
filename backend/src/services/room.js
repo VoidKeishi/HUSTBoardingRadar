@@ -90,11 +90,11 @@ const createNewRoom = async (newRoom) => {
   const missingFieldsCount = requiredFields.filter(field => !isFieldFilled(field)).length;
   // Calculate trust score based on missing fields
   if (missingFieldsCount === 0) {
-    currentTrustScore += 1; // All fields filled
-  } else if (missingFieldsCount <= 2) {
-    currentTrustScore += 0.5; // 2 or fewer fields missing
-  } else {
-    currentTrustScore += 0; // More than 2 fields missing (including more than 5)
+    currentTrustScore += 1;
+  } else if (missingFieldsCount > 0 && missingFieldsCount <= 4) {
+    currentTrustScore += 0.5;
+  } else if (missingFieldsCount > 4) {
+    currentTrustScore += 0;
   }
 
   // Verified contact phone number
@@ -114,7 +114,8 @@ const createNewRoom = async (newRoom) => {
         const sizeInKBytes = response.headers['content-length'] / 1024 || 0;
         if (sizeInKBytes >= 5 && sizeInKBytes <= 15) currentScore = 0.5;
         if (sizeInKBytes > 15) currentScore = 1;
-
+        console.log('🚀 ~ createNewRoom ~ currentScore:', currentScore)
+        
         if (highestImageScore < currentScore) highestImageScore = currentScore;
       } catch (error) {
         continue;
