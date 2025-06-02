@@ -105,7 +105,7 @@ const createNewRoom = async (newRoom) => {
   }
 
   // Calculate trust score based on image size in KB
-  const highestImageScore = 0;
+  let highestImageScore = 0;
   if (newRoom?.images && newRoom.images.length > 0) {
     for (let i = 0; i < newRoom.images.length; i++) {
       try {
