@@ -28,9 +28,9 @@
                 <div class="filter-group">
                     <label for="price-range">Khoảng Giá (VND)</label>
                     <div class="price-inputs">
-                        <input type="number" id="min-price" placeholder="Tối thiểu" min="0" step="500000">
+                        <input type="number" id="min-price" placeholder="0" min="0" step="500000">
                         <span>-</span>
-                        <input type="number" id="max-price" placeholder="Tối đa" min="0" step="500000">
+                        <input type="number" id="max-price" placeholder="10.000.000" min="0" step="500000">
                     </div>
                 </div>
 
@@ -38,6 +38,12 @@
                     <label for="distance">Khoảng Cách Đến HUST (km)</label>
                     <input type="range" id="distance" min="0" max="5" step="0.5" value="3">
                     <span id="distance-value">3 km</span>
+                </div>
+
+                <div class="filter-group">
+                    <label for="capacity">Số người ở cùng</label>
+                    <input type="range" id="capacity" min="1" max="5" step="1" value="1">
+                    <span id="capacity-value">1 người</span>
                 </div>
 
                 <div class="filter-group">

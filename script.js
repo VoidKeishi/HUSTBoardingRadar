@@ -1,3 +1,22 @@
+const amenities = [
+    'Wifi',
+    'Điều hòa',
+    'Ban công',
+    'Tivi',
+    'Phòng bếp chung',
+    'Máy giặt',
+    'Tủ lạnh',
+    'Bình nóng lạnh',
+    'Chỗ để xe',
+    'Thang máy',
+    'Bếp từ',
+    'Máy hút mùi',
+    'Giường',
+    'Tủ quần áo',
+    'Tủ bếp',
+    'Khóa cửa vân tay'
+];
+
 // Mock data for accommodations
 const accommodations = [
     {
@@ -644,6 +663,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const maxPriceInput = document.getElementById('max-price');
     const distanceInput = document.getElementById('distance');
     const distanceValue = document.getElementById('distance-value');
+    const capacityInput = document.getElementById('capacity');
+    const capacityValue = document.getElementById('capacity-value');
     const minTrustScoreInput = document.getElementById('min-trust-score');
     const trustScoreValue = document.getElementById('trust-score-value');
     const applyFiltersBtn = document.getElementById('apply-filters');
@@ -652,14 +673,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Store fetched rooms from API
     let fetchedRooms = [];
-    // Store all available amenities
-    let availableAmenities = [];
     // Selected amenities for filtering
     let selectedAmenities = [];
 
     // Create and add loading spinners
     const accommodationsSpinner = createLoadingSpinner();
-    const amenitiesSpinner = createLoadingSpinner();
+
+    // Initialize results count to 0
+    resultsCount.textContent = '(0)';
 
     // Function to create a loading spinner
     function createLoadingSpinner() {
@@ -745,23 +766,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function initializeData() {
         try {
-            // Show loading spinners
-            showAmenitiesLoading();
+            // Show loading spinner for accommodations only
             showAccommodationsLoading();
 
-            // Fetch amenities first
-            await fetchAmenities();
+            // Render amenities from constant array
+            renderAmenitiesFilter(amenities);
 
-            // Then fetch rooms
+            // Fetch rooms from API
             await fetchRecommendedRooms();
         } catch (error) {
             console.error('Error initializing data:', error);
             // If API calls fail, use mock data
+            fetchedRooms = accommodations;
             renderAccommodations(accommodations);
             resultsCount.textContent = `(${accommodations.length})`;
         } finally {
-            // Hide loading spinners regardless of success or failure
-            hideAmenitiesLoading();
+            // Hide loading spinner
             hideAccommodationsLoading();
         }
     }
@@ -778,63 +798,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function showAmenitiesLoading() {
-        amenitiesContainer.innerHTML = '';
-        amenitiesContainer.appendChild(amenitiesSpinner);
-    }
-
-    function hideAmenitiesLoading() {
-        if (amenitiesSpinner.parentNode === amenitiesContainer) {
-            amenitiesContainer.removeChild(amenitiesSpinner);
-        }
-    }
-
-    // Fetch all amenities from API
-    async function fetchAmenities() {
-        try {
-            const response = await fetch(`${API_BASE_URL}/amenity`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                // Include credentials if you're using cookies or session-based auth
-                credentials: 'include'
-            });
-
-            if (!response.ok) {
-                throw new Error(`Failed to fetch amenities: ${response.status}`);
-            }
-
-            availableAmenities = await response.json();
-
-            // Render amenities in the filter section
-            renderAmenitiesFilter(availableAmenities);
-        } catch (error) {
-            console.error('Error fetching amenities:', error);
-            // Use default amenities in the HTML
-            hideAmenitiesLoading();
-            throw error;
-        }
-    }
-
-    // Render amenities checkboxes in the filter
-    function renderAmenitiesFilter(amenities) {
+    // Render amenities checkboxes in the filter using constant array
+    function renderAmenitiesFilter(amenitiesArray) {
         // Clear existing amenities
         amenitiesContainer.innerHTML = '';
 
         // Create checkbox for each amenity
-        amenities.forEach(amenity => {
+        amenitiesArray.forEach((amenity, index) => {
             const amenityItem = document.createElement('div');
             amenityItem.className = 'filter-item';
 
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
-            checkbox.id = `amenity-${amenity.code}`;
-            checkbox.value = amenity.name;
+            checkbox.id = `amenity-${index}`;
+            checkbox.value = amenity;
 
             const label = document.createElement('label');
-            label.htmlFor = `amenity-${amenity.code}`;
-            label.textContent = amenity.name;
+            label.htmlFor = `amenity-${index}`;
+            label.textContent = amenity;
 
             // Add change event to update selected amenities
             checkbox.addEventListener('change', function () {
@@ -845,6 +826,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
+            amenityItem.className = 'checkbox-item';
             amenityItem.appendChild(checkbox);
             amenityItem.appendChild(label);
             amenitiesContainer.appendChild(amenityItem);
@@ -876,16 +858,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 resultsCount.textContent = `(${formattedRooms.length})`;
             } else {
                 // If API returns empty, use mock data
+                fetchedRooms = accommodations;
                 renderAccommodations(accommodations);
                 resultsCount.textContent = `(${accommodations.length})`;
-                fetchedRooms = accommodations;
             }
         } catch (error) {
             console.error('Error fetching recommended rooms:', error);
             // If API call fails, use mock data
+            fetchedRooms = accommodations;
             renderAccommodations(accommodations);
             resultsCount.textContent = `(${accommodations.length})`;
-            fetchedRooms = accommodations;
         }
     }
 
@@ -907,43 +889,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Fetch a specific room by ID
-    async function fetchRoomById(roomId) {
-        try {
-            const response = await fetch(`${API_BASE_URL}/room/${roomId}`);
-
-            if (!response.ok) {
-                throw new Error(`Failed to fetch room: ${response.status}`);
-            }
-
-            const room = await response.json();
-
-            if (room) {
-                // Format lastUpdated field
-                if (room.trustScore && room.trustScore.details && room.trustScore.details.lastUpdated) {
-                    room.trustScore.details.lastUpdated = formatRelativeTimeInVietnamese(new Date(room.trustScore.details.lastUpdated));
-                }
-                return room;
-            } else {
-                return null;
-            }
-        } catch (error) {
-            console.error(`Error fetching room ${roomId}:`, error);
-            return null;
-        }
-    }
-
     // Function to get room details by ID
-    async function getRoomDetails(roomId) {
-        // First try to get room from API
-        const room = await fetchRoomById(roomId);
-
-        if (room) {
-            return room;
-        }
-
-        // If API returns empty or fails, try to find in fetchedRooms
-        const fetchedRoom = fetchedRooms.find(r => r.id == roomId);
+    function getRoomDetails(roomId) {
+        // First try to find in fetchedRooms
+        const fetchedRoom = fetchedRooms.find(r => r.id == roomId || r._id == roomId);
         if (fetchedRoom) {
             return fetchedRoom;
         }
@@ -985,49 +934,91 @@ document.addEventListener('DOMContentLoaded', function () {
         const item = document.createElement('div');
         item.className = 'accommodation-item';
 
+        // Handle both backend and mock data formats
+        const title = accommodation.name || accommodation.title;
+        const price = accommodation.price || 0;
+        const area = accommodation.area !== undefined ? accommodation.area : accommodation.size;
+        const distance = accommodation.distance || 0;
+        const capacity = accommodation.capacity || 0;
+        const images = accommodation.images || [];
+        const amenities = accommodation.amenities || [];
+        const address = accommodation.address || '';
+        const id = accommodation._id || accommodation.id;
+
         // Determine trust score class
         let trustScoreClass = '';
         let trustScore = accommodation.trustScore.score;
 
         if (trustScore >= 4) {
             trustScoreClass = 'high-score';
-        } else if (trustScore === 3) {
+        } else if (trustScore >= 3 && trustScore < 4) {
             trustScoreClass = 'medium-score';
         } else {
             trustScoreClass = 'low-score';
         }
 
+        // Format display values
+        const priceDisplay = price === 0 ? 'Không có thông tin' : `${price.toLocaleString('vi-VN')} VND/tháng`;
+        const areaDisplay = area === 0 ? 'Không có thông tin' : `${area}m²`;
+        const distanceDisplay = distance === 0 ? 'Không có thông tin' : `${distance}km`;
+        const capacityDisplay = capacity === 0 ? 'Không có thông tin' : `${capacity} người`;
+
+        // Format trust score details for tooltip (same as modal)
+        const trustDetails = accommodation.trustScore.details;
+        const contactVerifiedText = trustDetails.contactVerified ? 'Chủ trọ đã xác nhận liên hệ' : 'Chủ trọ chưa xác nhận liên hệ';
+        const priceAcceptableText = trustDetails.priceAcceptable ? 'Giá cả hợp lý' : 'Giá cả chưa hợp lý';
+
         item.innerHTML = `
             <div class="accommodation-image">
-                <img src="${accommodation.images[0]}" alt="${accommodation.title}" onerror="this.onerror=null; this.src=this.src.replace('postimg.cc', 'i.postimg.cc') + '.jpg';">
+                <img src="${images[0] || ''}" alt="${title}" onerror="this.onerror=null; this.src=this.src.replace('postimg.cc', 'i.postimg.cc') + '.jpg';">
                 <div class="trust-score ${trustScoreClass}">
                     ${trustScore}
                     <div class="trust-tooltip">
-                        <p><strong>Nguồn:</strong> ${accommodation.trustScore.details.source}</p>
-                        <p><strong>Cập nhật:</strong> ${accommodation.trustScore.details.lastUpdated}</p>
-                        <p><strong>Liên hệ:</strong> ${accommodation.trustScore.details.contactVerified ? 'Đã xác thực' : 'Chưa xác thực'}</p>
+                        <p><strong>Nguồn:</strong> ${trustDetails.source}</p>
+                        <p><strong>Cập nhật:</strong> ${trustDetails.lastUpdated}</p>
+                        <p><strong>Chất lượng hình ảnh:</strong> ${trustDetails.imageQuality}</p>
+                        <p><strong>Xác nhận liên hệ:</strong> ${contactVerifiedText}</p>
+                        <p><strong>Đánh giá giá cả:</strong> ${priceAcceptableText}</p>
                     </div>
                 </div>
             </div>
             <div class="accommodation-details">
-                <h3 class="accommodation-title">${accommodation.title}</h3>
-                <p class="accommodation-address"><i class="fas fa-map-marker-alt"></i> ${accommodation.address}</p>
-                <p class="accommodation-price">${accommodation.price.toLocaleString('vi-VN')} VND/tháng</p>
+                <h3 class="accommodation-title">${title}</h3>
+                <p class="accommodation-address"><i class="fas fa-map-marker-alt"></i> ${address}</p>
+                <p class="accommodation-price">${priceDisplay}</p>
                 <div class="accommodation-meta">
-                    <span><i class="fas fa-expand"></i> ${accommodation.size}m²</span>
-                    <span><i class="fas fa-walking"></i> ${accommodation.distance}km</span>
-                    <span><i class="fas fa-users"></i> ${accommodation.capacity} người</span>
+                    <span><i class="fas fa-expand"></i> ${areaDisplay}</span>
+                    <span><i class="fas fa-walking"></i> ${distanceDisplay}</span>
+                    <span><i class="fas fa-users"></i> ${capacityDisplay}</span>
                 </div>
                 <div class="tags-container">
-                    ${accommodation.amenities.slice(0, 3).map(amenity => `<span class="tag">${amenity}</span>`).join('')}
-                    ${accommodation.amenities.length > 3 ? `<span class="tag">+${accommodation.amenities.length - 3}</span>` : ''}
+                    ${amenities.slice(0, 3).map(amenity => `<span class="tag">${amenity}</span>`).join('')}
+                    ${amenities.length > 3 ? `<span class="tag">+${amenities.length - 3}</span>` : ''}
                 </div>
             </div>
         `;
 
         // Add click event to open modal
         item.addEventListener('click', function () {
-            openAccommodationModal(accommodation);
+            // Create a standardized accommodation object
+            const standardizedAccommodation = {
+                id: id,
+                title: title,
+                name: title,
+                address: address,
+                price: price,
+                size: area,
+                area: area,
+                distance: distance,
+                capacity: capacity,
+                description: accommodation.description || '',
+                amenities: amenities,
+                contact: accommodation.contact || { name: '', phone: '' },
+                facebook: accommodation.facebookLink || accommodation.facebook || '',
+                images: images,
+                trustScore: accommodation.trustScore
+            };
+            openAccommodationModal(standardizedAccommodation);
         });
 
         return item;
@@ -1068,66 +1059,92 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Create detailed view for modal
     function createDetailedView(accommodation) {
+        // Handle both backend and mock data formats
+        const title = accommodation.name || accommodation.title;
+        const price = accommodation.price || 0;
+        const area = accommodation.area !== undefined ? accommodation.area : accommodation.size;
+        const distance = accommodation.distance || 0;
+        const capacity = accommodation.capacity || 0;
+        const images = accommodation.images || [];
+        const amenities = accommodation.amenities || [];
+        const address = accommodation.address || '';
+        const contact = accommodation.contact || { name: '', phone: '' };
+        const facebookLink = accommodation.facebookLink || accommodation.facebook || '';
+        const description = accommodation.description || '';
+
         // Determine trust score class
         let trustScoreClass = '';
         let trustScore = accommodation.trustScore.score;
 
         if (trustScore >= 4) {
             trustScoreClass = 'high-score';
-        } else if (trustScore === 3) {
+        } else if (trustScore >= 3 && trustScore < 4) {
             trustScoreClass = 'medium-score';
         } else {
             trustScoreClass = 'low-score';
         }
 
+        // Format display values - handle zero values
+        const priceDisplay = price === 0 ? 'Không có thông tin' : `${price.toLocaleString('vi-VN')} VND/tháng`;
+        const areaDisplay = area === 0 ? 'Không có thông tin' : `${area}m²`;
+        const distanceDisplay = distance === 0 ? 'Không có thông tin' : `${distance}km`;
+        const capacityDisplay = capacity === 0 ? 'Không có thông tin' : `${capacity} người`;
+
+        // Format trust score details
+        const trustDetails = accommodation.trustScore.details;
+        const contactVerifiedText = trustDetails.contactVerified ? 'Chủ trọ đã xác nhận liên hệ' : 'Chủ trọ chưa xác nhận liên hệ';
+        const priceAcceptableText = trustDetails.priceAcceptable ? 'Giá cả hợp lý' : 'Giá cả chưa hợp lý';
+
         return `
             <div class="detailed-view">
                 <div class="image-gallery">
-                    <img src="${accommodation.images[0]}" alt="${accommodation.title}" class="main-image" onerror="this.onerror=null; this.src=this.src.replace('postimg.cc', 'i.postimg.cc') + '.jpg';">
+                    <img src="${images[0] || ''}" alt="${title}" class="main-image" onerror="this.onerror=null; this.src=this.src.replace('postimg.cc', 'i.postimg.cc') + '.jpg';">
                     <div class="thumbnail-container">
-                        ${accommodation.images.map((src, index) => `
+                        ${images.map((src, index) => `
                             <img src="${src}" alt="Thumbnail ${index + 1}" class="thumbnail ${index === 0 ? 'active' : ''}" onerror="this.onerror=null; this.src=this.src.replace('postimg.cc', 'i.postimg.cc') + '.jpg';">
                         `).join('')}
                     </div>
                 </div>
                 <div class="accommodation-info">
-                    <h3>${accommodation.title}</h3>
+                    <h3>${title}</h3>
                     
                     <div class="info-section">
-                        <p><i class="fas fa-map-marker-alt"></i> ${accommodation.address}</p>
-                        <p><i class="fas fa-coins"></i> <strong>${accommodation.price.toLocaleString('vi-VN')} VND/tháng</strong></p>
-                        <p><i class="fas fa-expand"></i> Diện tích: ${accommodation.size}m²</p>
-                        <p><i class="fas fa-walking"></i> Cách HUST: ${accommodation.distance}km</p>
-                        <p><i class="fas fa-users"></i> Sức chứa: ${accommodation.capacity} người</p>
+                        <p><i class="fas fa-map-marker-alt"></i> ${address}</p>
+                        <p><i class="fas fa-coins"></i> <strong>${priceDisplay}</strong></p>
+                        <p><i class="fas fa-expand"></i> Diện tích: ${areaDisplay}</p>
+                        <p><i class="fas fa-walking"></i> Cách HUST: ${distanceDisplay}</p>
+                        <p><i class="fas fa-users"></i> Sức chứa: ${capacityDisplay}</p>
                     </div>
                     
                     <div class="info-section">
                         <h4>Mô Tả</h4>
-                        <p>${accommodation.description}</p>
+                        <p>${description}</p>
                     </div>
                     
                     <div class="info-section">
                         <h4>Tiện Ích</h4>
                         <div class="detailed-tags">
-                            ${accommodation.amenities.map(amenity => `<span class="tag">${amenity}</span>`).join('')}
+                            ${amenities.map(amenity => `<span class="tag">${amenity}</span>`).join('')}
                         </div>
                     </div>
                     
-                    <div class="detailed-trust-score ${trustScoreClass}" style="border-color: var(--${trustScore >= 4 ? 'success' : trustScore === 3 ? 'warning' : 'danger'}-color);">
+                    <div class="detailed-trust-score ${trustScoreClass}" style="border-color: var(--${trustScore >= 4 ? 'success' : trustScore >= 3 ? 'warning' : 'danger'}-color);">
                         <div class="score-value">${trustScore}</div>
                         <div class="score-details">
                             <h4>Độ Tin Cậy</h4>
-                            <p><strong>Nguồn:</strong> ${accommodation.trustScore.details.source}</p>
-                            <p><strong>Cập nhật:</strong> ${accommodation.trustScore.details.lastUpdated}</p>
-                            <p><strong>Chất lượng hình ảnh:</strong> ${accommodation.trustScore.details.imageQuality}</p>
+                            <p><strong>Nguồn:</strong> ${trustDetails.source}</p>
+                            <p><strong>Cập nhật:</strong> ${trustDetails.lastUpdated}</p>
+                            <p><strong>Chất lượng hình ảnh:</strong> ${trustDetails.imageQuality}</p>
+                            <p><strong>Xác nhận liên hệ:</strong> ${contactVerifiedText}</p>
+                            <p><strong>Đánh giá giá cả:</strong> ${priceAcceptableText}</p>
                         </div>
                     </div>
                     
                     <div class="contact-info">
                         <h4>Thông Tin Liên Hệ</h4>
-                        <p><i class="fas fa-user"></i> ${accommodation.contact.name}</p>
-                        <p><i class="fas fa-phone"></i> <a href="tel:${accommodation.contact.phone}">${accommodation.contact.phone}</a></p>
-                        <p><i class="fab fa-facebook-f"></i> <a href="${accommodation.facebook}" target="_blank">Facebook Post</a></p>
+                        <p><i class="fas fa-user"></i> ${contact.name}</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:${contact.phone}">${contact.phone}</a></p>
+                        <p><i class="fab fa-facebook-f"></i> <a href="${facebookLink}" target="_blank">Facebook Post</a></p>
                     </div>
                 </div>
             </div>
@@ -1143,19 +1160,37 @@ document.addEventListener('DOMContentLoaded', function () {
             const minPrice = minPriceInput.value ? parseInt(minPriceInput.value) : 0;
             const maxPrice = maxPriceInput.value ? parseInt(maxPriceInput.value) : Number.MAX_SAFE_INTEGER;
             const maxDistance = parseFloat(distanceInput.value);
+            const maxCapacity = parseInt(capacityInput.value);
             const minTrustScore = parseInt(minTrustScoreInput.value);
 
             // Use fetchedRooms as the source for filtering
             const roomsToFilter = fetchedRooms.length > 0 ? fetchedRooms : accommodations;
 
             const filteredAccommodations = roomsToFilter.filter(acc => {
-                // Price filters
+                // Price filters - exclude accommodations with 0 price when price filters are applied
+                if (minPrice > 0 && acc.price === 0) {
+                    return false;
+                }
+                if (maxPrice < Number.MAX_SAFE_INTEGER && acc.price === 0) {
+                    return false;
+                }
                 if (acc.price < minPrice || acc.price > maxPrice) {
                     return false;
                 }
 
-                // Distance filter
+                // Distance filter - exclude accommodations with 0 distance when distance filter is applied
+                if (acc.distance === 0) {
+                    return false;
+                }
                 if (acc.distance > maxDistance) {
+                    return false;
+                }
+
+                // Capacity filter - exclude accommodations with 0 capacity when capacity filter is applied
+                if (acc.capacity === 0) {
+                    return false;
+                }
+                if (acc.capacity > maxCapacity) {
                     return false;
                 }
 
@@ -1214,6 +1249,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add event listeners for filter controls
     distanceInput.addEventListener('input', function () {
         distanceValue.textContent = this.value + ' km';
+    });
+
+    capacityInput.addEventListener('input', function () {
+        capacityValue.textContent = this.value + ' người';
     });
 
     minTrustScoreInput.addEventListener('input', function () {
