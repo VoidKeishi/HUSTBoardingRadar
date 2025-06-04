@@ -19,23 +19,25 @@ const findAllRecommendedRooms = async () => {
     let adjustedRoom = { ...room.toObject() };
     let timeBonus = 0;
 
-    if (room.trustScore && room.trustScore.details && room.trustScore.details.lastUpdated) {
-      const lastUpdatedDate = new Date(room.trustScore.details.lastUpdated);
+    if (adjustedRoom.images.length > 1) {
+      if (room.trustScore && room.trustScore.details && room.trustScore.details.lastUpdated) {
+        const lastUpdatedDate = new Date(room.trustScore.details.lastUpdated);
 
-      // Check if lastUpdated is within 2 weeks
-      if (lastUpdatedDate >= twoWeeksAgo) {
-        timeBonus = 1.0;
+        // Check if lastUpdated is within 2 weeks
+        if (lastUpdatedDate >= twoWeeksAgo) {
+          timeBonus = 1.0;
+        }
+        // Check if lastUpdated is between 2 weeks and 1 month
+        else if (lastUpdatedDate >= oneMonthAgo && lastUpdatedDate < twoWeeksAgo) {
+          timeBonus = 0.5;
+        }
+        // If lastUpdated is more than 1 month old, no bonus (timeBonus remains 0)
       }
-      // Check if lastUpdated is between 2 weeks and 1 month
-      else if (lastUpdatedDate >= oneMonthAgo && lastUpdatedDate < twoWeeksAgo) {
-        timeBonus = 0.5;
-      }
-      // If lastUpdated is more than 1 month old, no bonus (timeBonus remains 0)
-    }
 
-    // Apply the time bonus to the trust score
-    if (adjustedRoom.trustScore && typeof adjustedRoom.trustScore.score === 'number') {
-      adjustedRoom.trustScore.score = Math.min(5, adjustedRoom.trustScore.score + timeBonus);
+      // Apply the time bonus to the trust score
+      if (adjustedRoom.trustScore && typeof adjustedRoom.trustScore.score === 'number') {
+        adjustedRoom.trustScore.score = Math.min(5, adjustedRoom.trustScore.score + timeBonus);
+      }
     }
 
     return adjustedRoom;
