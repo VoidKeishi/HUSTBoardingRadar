@@ -645,6 +645,27 @@ footer {
     font-size: 0.9rem;
 }
 
+/* New Styles for Distance and Capacity Inputs */
+.input-with-unit {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.input-with-unit input[type="number"] {
+    width: 70px;
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.input-with-unit .unit-label {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    white-space: nowrap;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 1200px) {
     .accommodations-list.grid-view {

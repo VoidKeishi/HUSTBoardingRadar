@@ -1165,8 +1165,8 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(() => {
             const minPrice = minPriceInput.value ? parseInt(minPriceInput.value) : 0;
             const maxPrice = maxPriceInput.value ? parseInt(maxPriceInput.value) : Number.MAX_SAFE_INTEGER;
-            const maxDistance = parseFloat(distanceInput.value);
-            const exactCapacity = parseInt(capacityInput.value);
+            const maxDistance = distanceInput.value ? parseFloat(distanceInput.value) : Number.MAX_SAFE_INTEGER;
+            const exactCapacity = capacityInput.value ? parseInt(capacityInput.value) : null;
             const minTrustScore = parseInt(minTrustScoreInput.value);
 
             // Use fetchedRooms as the source for filtering
@@ -1184,19 +1184,19 @@ document.addEventListener('DOMContentLoaded', function () {
                     return false;
                 }
 
-                // Distance filter - exclude accommodations with 0 distance when distance filter is applied
-                if (acc.distance === 0) {
+                // Distance filter - only filter if value is set
+                if (distanceInput.value && acc.distance === 0) {
                     return false;
                 }
-                if (acc.distance > maxDistance) {
+                if (distanceInput.value && acc.distance > maxDistance) {
                     return false;
                 }
 
-                // Capacity filter - exact match with user input
-                if (acc.capacity === 0) {
+                // Capacity filter - only filter if value is set
+                if (capacityInput.value && acc.capacity === 0) {
                     return false;
                 }
-                if (acc.capacity !== exactCapacity) {
+                if (capacityInput.value && acc.capacity !== exactCapacity) {
                     return false;
                 }
 
@@ -1232,8 +1232,10 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(() => {
             minPriceInput.value = '';
             maxPriceInput.value = '';
-            distanceInput.value = 3;
-            distanceValue.textContent = '3 km';
+            distanceInput.value = '';
+            distanceValue.textContent = '';
+            capacityInput.value = '';
+            capacityValue.textContent = '';
             minTrustScoreInput.value = 1;
             trustScoreValue.textContent = '1';
 
@@ -1254,20 +1256,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Add event listeners for filter controls
     distanceInput.addEventListener('input', function () {
-        // Ensure value is within bounds
-        let value = parseInt(this.value) || 1;
-        if (value < 1) value = 1;
-        if (value > 16) value = 16;
-        this.value = value;
-        distanceValue.textContent = value + ' km';
+        // Show value if not empty, else clear
+        if (this.value === '' || isNaN(this.value)) {
+            distanceValue.textContent = '';
+        } else {
+            let value = parseFloat(this.value);
+            if (value < 1) value = 1;
+            if (value > 16) value = 16;
+            this.value = value;
+            distanceValue.textContent = value + ' km';
+        }
     });
 
     capacityInput.addEventListener('input', function () {
-        // Ensure value is at least 1
-        let value = parseInt(this.value) || 1;
-        if (value < 1) value = 1;
-        this.value = value;
-        capacityValue.textContent = value + ' người';
+        // Show value if not empty, else clear
+        if (this.value === '' || isNaN(this.value)) {
+            capacityValue.textContent = '';
+        } else {
+            let value = parseInt(this.value);
+            if (value < 1) value = 1;
+            this.value = value;
+            capacityValue.textContent = value + ' người';
+        }
     });
 
     minTrustScoreInput.addEventListener('input', function () {
