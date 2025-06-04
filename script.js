@@ -992,8 +992,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     <span><i class="fas fa-users"></i> ${capacityDisplay}</span>
                 </div>
                 <div class="tags-container">
-                    ${amenities.slice(0, 3).map(amenity => `<span class="tag">${amenity}</span>`).join('')}
-                    ${amenities.length > 3 ? `<span class="tag">+${amenities.length - 3}</span>` : ''}
+                    ${amenities.length > 0
+                ? amenities.slice(0, 3).map(amenity => `<span class="tag">${amenity}</span>`).join('') +
+                (amenities.length > 3 ? `<span class="tag">+${amenities.length - 3}</span>` : '')
+                : '<span class="tag no-amenities">Không có</span>'
+            }
                 </div>
             </div>
         `;
@@ -1124,7 +1127,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="info-section">
                         <h4>Tiện Ích</h4>
                         <div class="detailed-tags">
-                            ${amenities.map(amenity => `<span class="tag">${amenity}</span>`).join('')}
+                            ${amenities.length > 0
+                ? amenities.map(amenity => `<span class="tag">${amenity}</span>`).join('')
+                : '<span class="tag no-amenities">Không có</span>'
+            }
                         </div>
                     </div>
                     
@@ -1144,7 +1150,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <h4>Thông Tin Liên Hệ</h4>
                         <p><i class="fas fa-user"></i> ${contact.name}</p>
                         <p><i class="fas fa-phone"></i> <a href="tel:${contact.phone}">${contact.phone}</a></p>
-                        <p><i class="fab fa-facebook-f"></i> <a href="${facebookLink}" target="_blank">Facebook Post</a></p>
+                        <p><i class="fas fa-info-circle"></i> <a href="${facebookLink}" target="_blank">Nguồn thông tin</a></p>
                     </div>
                 </div>
             </div>
@@ -1160,7 +1166,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const minPrice = minPriceInput.value ? parseInt(minPriceInput.value) : 0;
             const maxPrice = maxPriceInput.value ? parseInt(maxPriceInput.value) : Number.MAX_SAFE_INTEGER;
             const maxDistance = parseFloat(distanceInput.value);
-            const maxCapacity = parseInt(capacityInput.value);
+            const exactCapacity = parseInt(capacityInput.value);
             const minTrustScore = parseInt(minTrustScoreInput.value);
 
             // Use fetchedRooms as the source for filtering
@@ -1186,11 +1192,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     return false;
                 }
 
-                // Capacity filter - exclude accommodations with 0 capacity when capacity filter is applied
+                // Capacity filter - exact match with user input
                 if (acc.capacity === 0) {
                     return false;
                 }
-                if (acc.capacity > maxCapacity) {
+                if (acc.capacity !== exactCapacity) {
                     return false;
                 }
 
@@ -1248,11 +1254,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Add event listeners for filter controls
     distanceInput.addEventListener('input', function () {
-        distanceValue.textContent = this.value + ' km';
+        // Ensure value is within bounds
+        let value = parseInt(this.value) || 1;
+        if (value < 1) value = 1;
+        if (value > 16) value = 16;
+        this.value = value;
+        distanceValue.textContent = value + ' km';
     });
 
     capacityInput.addEventListener('input', function () {
-        capacityValue.textContent = this.value + ' người';
+        // Ensure value is at least 1
+        let value = parseInt(this.value) || 1;
+        if (value < 1) value = 1;
+        this.value = value;
+        capacityValue.textContent = value + ' người';
     });
 
     minTrustScoreInput.addEventListener('input', function () {

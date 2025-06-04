@@ -452,6 +452,12 @@ h2 {
     white-space: nowrap;
 }
 
+.tag.no-amenities {
+    background-color: #ecf0f1;
+    color: #95a5a6;
+    font-style: italic;
+}
+
 /* Modal Styles */
 .modal {
     display: none;
