@@ -73,60 +73,64 @@ const getImageScoreLabel = (imageScore) => {
 const createNewRoom = async (newRoom) => {
   let currentTrustScore = 0;
   const currentDate = new Date();
-  // Count missing fields
-  const requiredFields = [
-    newRoom?.name,
-    newRoom?.address,
-    newRoom?.area,
-    newRoom?.price,
-    newRoom?.distance,
-    newRoom?.capacity,
-    newRoom?.description,
-    newRoom?.amenities,
-    newRoom?.contact,
-    newRoom?.facebookLink,
-    newRoom?.images
-  ];
-  const missingFieldsCount = requiredFields.filter(field => !isFieldFilled(field)).length;
-  // Calculate trust score based on missing fields
-  if (missingFieldsCount === 0) {
-    currentTrustScore += 1;
-  } else if (missingFieldsCount > 0 && missingFieldsCount <= 4) {
-    currentTrustScore += 0.5;
-  } else if (missingFieldsCount > 4) {
-    currentTrustScore += 0;
-  }
-
-  // Verified contact phone number
-  if (newRoom?.contact) {
-    if (newRoom?.contact?.phone) {
+  if (newRoom?.images.length <= 1) {
+    currentTrustScore = 0;
+  } else {
+    // Count missing fields
+    const requiredFields = [
+      newRoom?.name,
+      newRoom?.address,
+      newRoom?.area,
+      newRoom?.price,
+      newRoom?.distance,
+      newRoom?.capacity,
+      newRoom?.description,
+      newRoom?.amenities,
+      newRoom?.contact,
+      newRoom?.facebookLink,
+      newRoom?.images
+    ];
+    const missingFieldsCount = requiredFields.filter(field => !isFieldFilled(field)).length;
+    // Calculate trust score based on missing fields
+    if (missingFieldsCount === 0) {
       currentTrustScore += 1;
+    } else if (missingFieldsCount > 0 && missingFieldsCount <= 4) {
+      currentTrustScore += 0.5;
+    } else if (missingFieldsCount > 4) {
+      currentTrustScore += 0;
     }
-  }
 
-  // Calculate trust score based on image size in KB
-  let highestImageScore = 0;
-  if (newRoom?.images && newRoom.images.length > 0) {
-    for (let i = 0; i < newRoom.images.length; i++) {
-      try {
-        let currentScore = 0;
-        const response = await axios.get(newRoom.images[i], { responseType: 'arraybuffer' });
-        const sizeInKBytes = response.headers['content-length'] / 1024 || 0;
-        if (sizeInKBytes >= 5 && sizeInKBytes <= 15) currentScore = 0.5;
-        if (sizeInKBytes > 15) currentScore = 1;
-        console.log('🚀 ~ createNewRoom ~ currentScore:', currentScore)
-        
-        if (highestImageScore < currentScore) highestImageScore = currentScore;
-      } catch (error) {
-        continue;
+    // Verified contact phone number
+    if (newRoom?.contact) {
+      if (newRoom?.contact?.phone) {
+        currentTrustScore += 1;
       }
     }
-  }
-  currentTrustScore += highestImageScore;
 
-  // Check if room price is acceptable
-  if (newRoom?.priceAcceptable) {
-    currentTrustScore += 1;
+    // Calculate trust score based on image size in KB
+    let highestImageScore = 0;
+    if (newRoom?.images && newRoom.images.length > 0) {
+      for (let i = 0; i < newRoom.images.length; i++) {
+        try {
+          let currentScore = 0;
+          const response = await axios.get(newRoom.images[i], { responseType: 'arraybuffer' });
+          const sizeInKBytes = response.headers['content-length'] / 1024 || 0;
+          if (sizeInKBytes >= 5 && sizeInKBytes <= 15) currentScore = 0.5;
+          if (sizeInKBytes > 15) currentScore = 1;
+          console.log('🚀 ~ createNewRoom ~ currentScore:', currentScore)
+
+          if (highestImageScore < currentScore) highestImageScore = currentScore;
+        } catch (error) {
+          continue;
+        }
+      }
+    }
+    currentTrustScore += highestImageScore;
+
+    // Check if room price is acceptable
+    if (newRoom?.priceAcceptable) {
+      currentTrustScore += 1;
+    }
   }
 
   const newRoomData = {
