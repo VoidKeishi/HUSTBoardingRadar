@@ -222,9 +222,9 @@ const accommodations = [
         trustScore: {
             score: 5,
             details: {
-                source: "Chủ nhà xác thực",
+                source: "Đơn vị bất động sản xác thực",
                 lastUpdated: "3 ngày trước",
-                imageQuality: "Hình ảnh chất lượng cao",
+                imageQuality: "Hình ảnh chuyên nghiệp chất lượng cao",
                 contactVerified: true
             }
         }
@@ -662,9 +662,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const minPriceInput = document.getElementById('min-price');
     const maxPriceInput = document.getElementById('max-price');
     const distanceInput = document.getElementById('distance');
-    const distanceValue = document.getElementById('distance-value');
     const capacityInput = document.getElementById('capacity');
-    const capacityValue = document.getElementById('capacity-value');
     const minTrustScoreInput = document.getElementById('min-trust-score');
     const trustScoreValue = document.getElementById('trust-score-value');
     const applyFiltersBtn = document.getElementById('apply-filters');
@@ -1233,9 +1231,7 @@ document.addEventListener('DOMContentLoaded', function () {
             minPriceInput.value = '';
             maxPriceInput.value = '';
             distanceInput.value = '';
-            distanceValue.textContent = '';
             capacityInput.value = '';
-            capacityValue.textContent = '';
             minTrustScoreInput.value = 1;
             trustScoreValue.textContent = '1';
 
@@ -1256,27 +1252,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Add event listeners for filter controls
     distanceInput.addEventListener('input', function () {
-        // Show value if not empty, else clear
-        if (this.value === '' || isNaN(this.value)) {
-            distanceValue.textContent = '';
-        } else {
+        // Validate input range
+        if (this.value !== '' && !isNaN(this.value)) {
             let value = parseFloat(this.value);
             if (value < 1) value = 1;
             if (value > 16) value = 16;
             this.value = value;
-            distanceValue.textContent = value + ' km';
         }
     });
 
     capacityInput.addEventListener('input', function () {
-        // Show value if not empty, else clear
-        if (this.value === '' || isNaN(this.value)) {
-            capacityValue.textContent = '';
-        } else {
+        // Validate input range
+        if (this.value !== '' && !isNaN(this.value)) {
             let value = parseInt(this.value);
             if (value < 1) value = 1;
             this.value = value;
-            capacityValue.textContent = value + ' người';
         }
     });
 

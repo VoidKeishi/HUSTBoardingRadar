@@ -56,151 +56,232 @@ header .container {
 /* Main Content Layout */
 .main-container {
     display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 20px;
+    grid-template-columns: 400px 1fr;
+    gap: 30px;
     margin: 20px auto;
+    max-width: 1400px;
 }
 
-/* Sidebar Styles - More Compact */
+/* Enhanced Filter Sidebar */
 .filter-sidebar {
     background-color: white;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
-    padding: 15px;
+    padding: 16px 16px 16px 16px;
     position: sticky;
     top: 20px;
     height: max-content;
     max-height: calc(100vh - 40px);
     overflow-y: auto;
+    width: 100%;
+}
+
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eee;
 }
 
 .filter-sidebar h2 {
     font-size: 1.2rem;
-    margin-bottom: 15px;
+    margin-bottom: 0;
     color: var(--secondary-color);
-    padding-bottom: 8px;
-    border-bottom: 1px solid #eee;
+}
+
+.reset-icon {
+    background: none;
+    border: none;
+    color: #95a5a6;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.reset-icon:hover {
+    color: var(--primary-color);
+    background-color: #f8f9fa;
+    transform: rotate(-15deg);
 }
 
 .filter-container {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 }
 
 .filter-group {
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
 .filter-group label {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     color: var(--secondary-color);
 }
 
-/* Price inputs */
+/* Price inputs - more compact */
 .price-inputs {
     display: flex;
     align-items: center;
+    gap: 8px;
 }
 
 .price-inputs input {
-    width: 45%;
-    padding: 6px 10px;
+    width: 130px;
+    padding: 6px 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 0.85rem;
+    transition: border-color 0.2s;
 }
 
 .price-inputs span {
-    margin: 0 8px;
+    font-weight: 500;
+    color: #666;
+    font-size: 0.85rem;
 }
 
-/* Range inputs */
+/* More compact input with unit */
+.input-with-unit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-with-unit input[type="number"] {
+    width: 100px;
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    transition: border-color 0.2s;
+}
+
+.input-with-unit .unit-label {
+    font-size: 0.85rem;
+    color: #666;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Compact range inputs */
 input[type="range"] {
     width: 100%;
-    margin-bottom: 5px;
+    margin: 4px 0;
+    height: 4px;
+    border-radius: 2px;
+    background: #ddd;
+    outline: none;
 }
 
-/* Checkboxes */
-.amenities-checkboxes {
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Compact trust score display */
+.trust-score-display {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-    max-height: 200px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.trust-score-display span:first-child {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+#trust-score-value {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+/* Very compact amenities checkboxes */
+.amenities-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 12px;
+    max-height: 140px;
     overflow-y: auto;
-    padding: 12px;
+    overflow-x: hidden;
+    padding: 10px 8px;
     border: 1px solid #eee;
     border-radius: 4px;
-    margin-top: 5px;
-    width: 100%;
-}
-
-/* Custom scrollbar for amenities container */
-.amenities-checkboxes::-webkit-scrollbar {
-    width: 6px;
-}
-
-.amenities-checkboxes::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-}
-
-.amenities-checkboxes::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 10px;
-}
-
-.amenities-checkboxes::-webkit-scrollbar-thumb:hover {
-    background: #aaa;
+    margin-top: 4px;
+    background-color: #fafbfc;
 }
 
 .checkbox-item {
     display: flex;
     align-items: center;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     white-space: nowrap;
-    min-height: 20px;
+    min-height: 18px;
+    padding: 1px 0;
 }
 
 .checkbox-item input[type="checkbox"] {
-    margin-right: 8px;
+    margin-right: 6px;
     flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    accent-color: var(--primary-color);
 }
 
 .checkbox-item label {
     margin-bottom: 0;
     cursor: pointer;
     user-select: none;
+    font-size: 0.8rem;
+    line-height: 1.1;
 }
 
-/* Buttons */
+/* More compact button */
 .btn {
     background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 8px 15px;
+    padding: 8px 14px;
     border-radius: var(--border-radius);
     cursor: pointer;
     font-weight: 600;
-    transition: background-color 0.2s;
+    font-size: 0.9rem;
+    transition: all 0.2s;
     width: 100%;
-    margin-top: 5px;
+    margin-top: 4px;
 }
 
 .btn:hover {
     background-color: #2980b9;
-}
-
-.btn-secondary {
-    background-color: #95a5a6;
-    margin-top: 8px;
-}
-
-.btn-secondary:hover {
-    background-color: #7f8c8d;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 
 /* Content Area */
@@ -218,7 +299,6 @@ section {
 h2 {
     color: var(--secondary-color);
     margin-bottom: 1rem;
-    border-bottom: 2px solid var(--light-color);
     padding-bottom: 0.5rem;
 }
 
@@ -235,11 +315,6 @@ h2 {
 .results-header h2 {
     font-size: 1.3rem;
     color: var(--secondary-color);
-}
-
-#results-count {
-    font-weight: normal;
-    color: #7f8c8d;
 }
 
 /* Results Section */
@@ -653,7 +728,7 @@ footer {
 }
 
 .input-with-unit input[type="number"] {
-    width: 70px;
+    width: 100px;
     padding: 6px 10px;
     border: 1px solid #ddd;
     border-radius: 4px;

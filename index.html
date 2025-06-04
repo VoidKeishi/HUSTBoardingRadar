@@ -23,7 +23,12 @@
 
     <div class="main-container container">
         <aside class="filter-sidebar">
-            <h2>Bộ Lọc Tìm Kiếm</h2>
+            <div class="filter-header">
+                <h2>Bộ Lọc Tìm Kiếm</h2>
+                <button id="reset-filters" class="reset-icon" title="Đặt lại bộ lọc">
+                    <i class="fas fa-undo"></i>
+                </button>
+            </div>
             <div class="filter-container">
                 <div class="filter-group">
                     <label for="price-range">Khoảng Giá (VND)</label>
@@ -75,11 +80,13 @@
                 <div class="filter-group">
                     <label for="min-trust-score">Điểm Tin Cậy Tối Thiểu</label>
                     <input type="range" id="min-trust-score" min="1" max="5" step="1" value="1">
-                    <span id="trust-score-value">1</span>
+                    <div class="trust-score-display">
+                        <span>Tối thiểu</span>
+                        <span id="trust-score-value">1</span>
+                    </div>
                 </div>
 
                 <button id="apply-filters" class="btn">Áp Dụng Bộ Lọc</button>
-                <button id="reset-filters" class="btn btn-secondary">Đặt Lại</button>
             </div>
         </aside>
 
