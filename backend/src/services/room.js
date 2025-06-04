@@ -67,7 +67,7 @@ const isFieldFilled = (value) => {
 };
 
 const getImageScoreLabel = (imageScore) => {
-  if (imageScore === 1) return 'Hình ảnh chuyên nghiệp chất lượng cao';
+  if (imageScore === 1) return 'Hình ảnh chất lượng cao';
   if (imageScore === 0) return 'Hình ảnh chất lượng thấp';
   if (imageScore === 0.5) return 'Hình ảnh chất lượng trung bình';
 }
