@@ -72,6 +72,7 @@ const getImageScoreLabel = (imageScore) => {
 
 const createNewRoom = async (newRoom) => {
   let currentTrustScore = 0;
+  let highestImageScore = 0;
   const currentDate = new Date();
   if (newRoom?.images.length <= 1) {
     currentTrustScore = 0;
@@ -108,7 +109,6 @@ const createNewRoom = async (newRoom) => {
     }
 
     // Calculate trust score based on image size in KB
-    let highestImageScore = 0;
     if (newRoom?.images && newRoom.images.length > 0) {
       for (let i = 0; i < newRoom.images.length; i++) {
         try {
